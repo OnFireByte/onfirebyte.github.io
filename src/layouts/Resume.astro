@@ -1,0 +1,62 @@
+---
+import Download from "@/components/Download.astro";
+import Navbar from "@/components/Navbar.svelte";
+import "@/layouts/resume.css";
+import "@fontsource-variable/jetbrains-mono";
+
+type Props = {
+    frontmatter: {
+        title: string;
+        pdfLink?: string;
+        noIndex?: boolean;
+        description?: string;
+    };
+};
+
+const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
+
+const initials = title
+    .split(" ")
+    .map((word) => word[0].toUpperCase())
+    .slice(0, 2);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description || title} />
+        {noIndex && <meta name="robots" content="noindex" />}
+        <title>{title}</title>
+    </head>
+    <body class="bg-mainlight min-h-screen flex flex-col items-center">
+        <Navbar />
+        <!-- Space for nav bar -->
+        <div class="h-16 print:h-0"></div>
+        <div class="m-8 print:m-0">
+            <article class="minimalist relative">
+                {
+                    pdfLink && (
+                        <div class="not-prose absolute right-8 top-8 print:top-0">
+                            <Download href={pdfLink} />
+                        </div>
+                    )
+                }
+                <slot />
+            </article>
+        </div>
+    </body>
+
+    <style>
+        body {
+            font-family: "JetBrains Mono Variable", sans-serif;
+        }
+
+        ::selection {
+            @apply bg-indigo-400 bg-opacity-50 text-white;
+        }
+    </style>
+</html>

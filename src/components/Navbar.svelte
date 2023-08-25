@@ -3,7 +3,7 @@
 </script>
 
 <nav
-    class="h-16 w-full bg-mainlight border-b-2 border-maindark fixed flex items-center justify-between"
+    class="h-16 w-full bg-mainlight border-b-2 border-maindark fixed flex items-center justify-between z-50 print:hidden"
 >
     <a href="/" class="text-2xl font-bold px-4 bg-maindark h-full text-mainlight flex items-end">
         pkpt.dev_

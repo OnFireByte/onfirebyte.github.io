@@ -1,20 +1,31 @@
 {
-  "name": "pkpt",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/svelte": "^3.1.1",
-    "@astrojs/tailwind": "^4.0.0",
-    "@fontsource-variable/jetbrains-mono": "^5.0.9",
-    "astro": "^2.10.14",
-    "svelte": "^4.0.0",
-    "tailwindcss": "^3.0.24"
-  }
+    "name": "pkpt",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "generate-pdf": "ts-node --project tsconfig-pdf.json ./scripts/generate-pdf.ts",
+        "generate-pdf:ci": "start-server-and-test 3000 generate-pdf",
+        "build": "astro check && tsc --noEmit && yarn generate-pdf:ci && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/svelte": "^3.1.1",
+        "@astrojs/tailwind": "^4.0.0",
+        "@fontsource-variable/jetbrains-mono": "^5.0.9",
+        "@fontsource/poppins": "^5.0.8",
+        "astro": "^2.10.14",
+        "playwright": "^1.37.1",
+        "start-server-and-test": "^2.0.0",
+        "svelte": "^4.0.0",
+        "tailwindcss": "^3.0.24",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.9",
+        "@tsconfig/node16": "^16.1.1"
+    }
 }
