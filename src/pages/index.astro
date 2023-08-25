@@ -1,10 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Main from "@/components/Main.svelte";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-    <main class="xl:w-[1024px] p-8">
-        <h1 class="text-8xl font-bold">Hello!</h1>
-        <span class="text-xl">Under construction 🚧</span>
-    </main>
+<Layout title="PKPT">
+    <Main class="flex justify-center flex-col">
+        <h1 class="text-8xl font-bold pb-4">Hello!</h1>
+        <p>
+            pkpt is literally abbreviation of <font class="font-bold">"Pakin Puttanukulchai"</font>
+        </p>
+    </Main>
 </Layout>

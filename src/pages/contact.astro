@@ -1,0 +1,27 @@
+---
+import A from "@/components/A.svelte";
+import Main from "@/components/Main.svelte";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="PKPT">
+    <Main class="flex items-center justify-center">
+        <h1 class="text-6xl font-bold mb-8">Contact</h1>
+        <div class="m-8 border-[1px] h-24 border-maindark"></div>
+        <content class="flex flex-col gap-3">
+            <p>
+                Email: <A newtab href="mailto: bright.pakin@hotmail.com">
+                    bright.pakin@hotmail.com
+                </A>
+            </p>
+            <p>
+                LinkedIn: <A newtab href="https://www.linkedin.com/in/pakinput/">
+                    Pakin Puttanukulchai
+                </A>
+            </p>
+            <p>
+                GitHub: <A newtab href="https://github.com/OnFireByte">OnFireByte</A>
+            </p>
+        </content>
+    </Main>
+</Layout>

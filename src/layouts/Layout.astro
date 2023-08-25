@@ -1,13 +1,14 @@
 ---
+import Navbar from "@/components/Navbar.svelte";
 import "@fontsource-variable/jetbrains-mono";
-import Navbar from "../components/Navbar.svelte";
 
 interface Props {
     title: string;
     class?: string;
 }
 
-const { title, class: bodyClass } = Astro.props;
+let { title, class: bodyClass } = Astro.props;
+bodyClass ??= "";
 ---
 
 <!DOCTYPE html>
@@ -20,11 +21,11 @@ const { title, class: bodyClass } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body class="min-h-screen bg-mainlight">
+    <body class="bg-mainlight min-h-screen flex flex-col">
         <Navbar />
         <!-- Space for nav bar -->
         <div class="h-16"></div>
-        <div class={`${bodyClass} text-stone-700 justify-center flex`}>
+        <div class={`${bodyClass} text-stone-700 justify-center flex h-full grow`}>
             <slot />
         </div>
     </body>
