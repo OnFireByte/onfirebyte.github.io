@@ -43,6 +43,11 @@ article.minimalist {
 
     prose-li:marker:m-0
 
+    [&>iframe]:mx-auto
+    [&>iframe]:w-[80%]
+    [&>iframe]:max-w-[560px]
+    md:[&>iframe]:h-[315px]
+    [&>iframe]:h-[216px]
     
     dark:bg-maindark
     dark:prose-invert;

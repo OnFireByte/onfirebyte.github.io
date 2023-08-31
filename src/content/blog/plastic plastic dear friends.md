@@ -17,6 +17,6 @@ date: 2023-08-30
 
 คือจริง ๆ ก็เขียนมาเพราะแค่อยากจะทดสอบตัว blog เฉย ๆ แต่ขอส่งท้ายด้วยการที่ว่าใครที่ยังไม่ได้ฟัง Live แนะนำอย่างยิ่ง (งานอวยวงสุดที่รัก)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=zh1xqcQxXb-nPDes&amp;list=OLAK5uy_nxF-OV5AUByBGRVOB95bDHzbivLZ8k7CM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/videoseries?si=zh1xqcQxXb-nPDes&amp;list=OLAK5uy_nxF-OV5AUByBGRVOB95bDHzbivLZ8k7CM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ปล. แอบเสียดายที่เพลงน้อยไปหน่อย อยากให้เยอะกว่านี้นิดนึง 🥺
