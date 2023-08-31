@@ -23,12 +23,13 @@ const { title, og } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={title} />
         {og && <meta property="og:image" content={og} />}
-        <ViewTransitions transition:animate="slide" />
+        <ViewTransitions />
 
         <title>{title}</title>
     </head>
     <body class="bg-mainlight min-h-screen flex flex-col items-center">
-        <Navbar client:load />
+        <Navbar client:load transition:animate="none" />
+        <div class="h-16"></div>
 
         <Main>
             <article class="minimalist">

@@ -1,5 +1,5 @@
 ---
-title: Pakin Puttanukulchai - Resume
+title: Resume - pkpt
 description: Resume about Pakin Puttanukulchai
 layout: "@/layouts/Resume.astro"
 pdfLink: resume.pdf

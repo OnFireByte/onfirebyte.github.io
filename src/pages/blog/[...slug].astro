@@ -2,7 +2,7 @@
 import Button from "@/components/Button.svelte";
 import BlogLayout from "@/layouts/Blog.astro";
 import { Image } from "astro:assets";
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -18,13 +18,13 @@ const { Content } = await post.render();
 ---
 
 <BlogLayout title={post.data.title} tags={post.data.tags} og={post.data.cover?.src}>
-    <a href="/blog" class="hidden md:inline"><Button ghost>{"<"} Back</Button></a>
+    <a href="/blog" class="hidden md:inline"><Button ghost class="mt-8">{"<"} Back</Button></a>
     {
         post.data.cover && (
             <Image
                 src={post.data.cover}
                 alt={post.data.title}
-                class="m-auto aspect-auto h-[228px] md:h-[300px] lg:h-[420px] object-cover"
+                class="mx-auto mt-0 aspect-auto h-[228px] md:h-[300px] lg:h-[420px] object-cover"
                 transition:name={`image-${post.slug}`}
             />
         )

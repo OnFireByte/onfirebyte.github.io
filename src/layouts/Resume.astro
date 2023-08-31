@@ -31,11 +31,11 @@ const initials = title
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={description || title} />
         {noIndex && <meta name="robots" content="noindex" />}
-        <ViewTransitions transition:animate="slide" />
+        <ViewTransitions />
         <title>{title}</title>
     </head>
     <body class="bg-mainlight min-h-screen flex flex-col items-center">
-        <Navbar client:load />
+        <Navbar client:load transition:animate="none" />
         <!-- Space for nav bar -->
         <div class="h-16 print:h-0"></div>
         <div class="m-8 print:m-0">

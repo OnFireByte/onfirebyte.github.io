@@ -20,11 +20,11 @@ bodyClass ??= "";
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
-        <ViewTransitions transition:animate="slide" />
+        <ViewTransitions />
         <title>{title}</title>
     </head>
     <body class="bg-mainlight min-h-screen flex flex-col">
-        <Navbar client:load />
+        <Navbar client:load transition:animate="none" />
         <!-- Space for nav bar -->
         <div class="h-16"></div>
         <div class={`${bodyClass} text-stone-700 justify-center flex h-full grow`}>
