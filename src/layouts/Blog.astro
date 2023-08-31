@@ -14,7 +14,7 @@ type Props = {
 const { title, og } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -28,7 +28,7 @@ const { title, og } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg-mainlight min-h-screen flex flex-col items-center">
-        <Navbar client:load transition:animate="none" />
+        <Navbar client:load transition:animate="none" transition:persist transition:name="nav"/>
         <div class="h-16"></div>
 
         <Main>

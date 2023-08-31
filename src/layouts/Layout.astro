@@ -12,7 +12,7 @@ let { title, class: bodyClass } = Astro.props;
 bodyClass ??= "";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -24,7 +24,7 @@ bodyClass ??= "";
         <title>{title}</title>
     </head>
     <body class="bg-mainlight min-h-screen flex flex-col">
-        <Navbar client:load transition:animate="none" />
+        <Navbar client:load transition:animate="none" transition:persist transition:name="nav"/>
         <!-- Space for nav bar -->
         <div class="h-16"></div>
         <div class={`${bodyClass} text-stone-700 justify-center flex h-full grow`}>
