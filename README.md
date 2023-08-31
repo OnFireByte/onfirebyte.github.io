@@ -1,5 +1,5 @@
 # Astro + Svelte + Tailwind + Beige + Monospace font + Me
-Do you ever have a impulse like "Damn, I should rebuild my again this time"? Yeah, that's me.
+Do you ever have an impulse like "Damn, I should rebuild my again this time"? Yeah, that's me.
 
 Old stack:
 - Vite? pain af if you gonna do MD page stuff.
