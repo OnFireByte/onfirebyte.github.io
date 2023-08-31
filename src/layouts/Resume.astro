@@ -3,6 +3,7 @@ import Download from "@/components/Download.astro";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/resume.css";
 import "@fontsource-variable/jetbrains-mono";
+import { ViewTransitions } from "astro:transitions";
 
 type Props = {
     frontmatter: {
@@ -30,6 +31,7 @@ const initials = title
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={description || title} />
         {noIndex && <meta name="robots" content="noindex" />}
+        <ViewTransitions transition:animate="slide" />
         <title>{title}</title>
     </head>
     <body class="bg-mainlight min-h-screen flex flex-col items-center">
@@ -48,15 +50,14 @@ const initials = title
                 <slot />
             </article>
         </div>
+        <style>
+            body {
+                font-family: "JetBrains Mono Variable", sans-serif;
+            }
+
+            ::selection {
+                @apply bg-indigo-400 bg-opacity-50 text-white;
+            }
+        </style>
     </body>
-
-    <style>
-        body {
-            font-family: "JetBrains Mono Variable", sans-serif;
-        }
-
-        ::selection {
-            @apply bg-indigo-400 bg-opacity-50 text-white;
-        }
-    </style>
 </html>

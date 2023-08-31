@@ -1,6 +1,7 @@
 ---
 import Main from "@/components/Main.svelte";
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 // Get all entries from a collection.
@@ -39,7 +40,10 @@ function extractDesc(md: string) {
                                 <div class="bg-mainlight border-2 sm:h-52 border-maindark p-4 rounded flex flex-col-reverse sm:flex-row justify-between gap-4 transition-all ease-in-out group-hover:translate-y-[-0.75rem] group-hover:translate-x-[-0.75rem]">
                                     <div class="flex flex-col justify-between gap-2">
                                         <p class="text-sm line-clamp-5">
-                                            <span class="font-bold select-text text-lg block">
+                                            <span
+                                                class="font-bold select-text text-lg block"
+                                                transition:name={`title-${v.slug}`}
+                                            >
                                                 {v.data.title}
                                             </span>
                                             {extractDesc(v.body)}
@@ -54,10 +58,11 @@ function extractDesc(md: string) {
                                     </div>
                                     {v.data.cover && (
                                         <div class="h-full lg:shrink">
-                                            <img
-                                                src={v.data.cover?.src ?? ""}
+                                            <Image
+                                                src={v.data.cover}
                                                 alt=""
                                                 class="aspect-[4/3] lg:aspect-auto object-cover rounded sm:min-w-[16rem] lg:min-w-[10rem] h-full w-full sm:w-auto"
+                                                transition:name={`image-${v.slug}`}
                                             />
                                         </div>
                                     )}

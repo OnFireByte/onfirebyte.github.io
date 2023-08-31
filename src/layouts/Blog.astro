@@ -3,6 +3,7 @@ import Main from "@/components/Main.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/blog.css";
 import "@fontsource-variable/jetbrains-mono";
+import { ViewTransitions } from "astro:transitions";
 
 type Props = {
     title: string;
@@ -22,6 +23,7 @@ const { title, og } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={title} />
         {og && <meta property="og:image" content={og} />}
+        <ViewTransitions transition:animate="slide" />
 
         <title>{title}</title>
     </head>
@@ -33,15 +35,14 @@ const { title, og } = Astro.props;
                 <slot />
             </article>
         </Main>
+        <style>
+            body {
+                font-family: "JetBrains Mono Variable", sans-serif;
+            }
+
+            ::selection {
+                @apply bg-indigo-400 bg-opacity-50 text-white;
+            }
+        </style>
     </body>
 </html>
-
-<style>
-    body {
-        font-family: "JetBrains Mono Variable", sans-serif;
-    }
-
-    ::selection {
-        @apply bg-indigo-400 bg-opacity-50 text-white;
-    }
-</style>

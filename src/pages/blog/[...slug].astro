@@ -1,6 +1,7 @@
 ---
 import Button from "@/components/Button.svelte";
 import BlogLayout from "@/layouts/Blog.astro";
+import { Image } from "astro:assets";
 import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -18,12 +19,17 @@ const { Content } = await post.render();
 
 <BlogLayout title={post.data.title} tags={post.data.tags} og={post.data.cover?.src}>
     <a href="/blog" class="hidden md:inline"><Button ghost>{"<"} Back</Button></a>
-    <img
-        src={post.data.cover?.src ?? ""}
-        alt={post.data.title}
-        class="m-auto aspect-auto h-[228px] md:h-[300px] lg:h-[420px] object-cover"
-    />
-    <h1>{post.data.title}</h1>
+    {
+        post.data.cover && (
+            <Image
+                src={post.data.cover}
+                alt={post.data.title}
+                class="m-auto aspect-auto h-[228px] md:h-[300px] lg:h-[420px] object-cover"
+                transition:name={`image-${post.slug}`}
+            />
+        )
+    }
+    <h1 transition:name={`title-${post.slug}`}>{post.data.title}</h1>
     <div class="mb-8 flex gap-2 text-sm">
         {
             post.data.tags.map((v) => (
