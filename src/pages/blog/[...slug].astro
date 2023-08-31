@@ -16,7 +16,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogLayout title={post.data.title} tags={post.data.tags} og={post.data.cover?.src || ""}>
+<BlogLayout title={post.data.title} tags={post.data.tags} og={post.data.cover?.src}>
     <a href="/blog" class="hidden md:inline"><Button ghost>{"<"} Back</Button></a>
     <img
         src={post.data.cover?.src ?? ""}
