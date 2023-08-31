@@ -7,9 +7,10 @@ import "@fontsource-variable/jetbrains-mono";
 type Props = {
     title: string;
     tags: string[];
+    og: string;
 };
 
-const { title } = Astro.props;
+const { title, og } = Astro.props;
 
 const noIndex = false;
 ---
@@ -22,7 +23,8 @@ const noIndex = false;
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={title} />
-        {noIndex && <meta name="robots" content="noindex" />}
+        <meta property="og:image" content={og} />
+
         <title>{title}</title>
     </head>
     <body class="bg-mainlight min-h-screen flex flex-col items-center">
