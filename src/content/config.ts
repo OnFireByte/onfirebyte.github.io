@@ -9,6 +9,19 @@ const blogCollection = defineCollection({
             tags: z.array(z.string()),
             cover: image().optional(),
             date: z.date(),
+            image_position: z
+                .enum([
+                    "object-bottom",
+                    "object-center",
+                    "object-left",
+                    "object-left-bottom",
+                    "object-left-top",
+                    "object-right",
+                    "object-right-bottom",
+                    "object-right-top",
+                    "object-top",
+                ])
+                .default("object-center"),
         }),
 });
 

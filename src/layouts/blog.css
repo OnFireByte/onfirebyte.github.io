@@ -8,6 +8,7 @@ article.minimalist {
     lg:px-0
 
     prose-p:text-maindark
+    md:prose-p:text-lg
 
     prose-headings:text-maindark
     prose-headings:font-bold
@@ -20,19 +21,23 @@ article.minimalist {
 
     m-0 pb-8 pt-0
 
+    prose-blockquote:border-maindark
     
     md:prose-h1:text-6xl
     prose-h1:text-[clamp(1rem,10vw,3rem)]
     prose-h1:leading-[1.2]
     md:prose-h1:leading-[1.2]
+    prose-img:w-[80%]
+    md:prose-img:w-[400px]
+    prose-img:mx-auto
+
+    md:prose-h2:text-4xl prose-h2:text-3xl
     
-    md:prose-h2:text-4xl
-    prose-h2:text-3xl
-    
-    md:prose-h3:text-3xl
-    prose-h3:text-xl
-    
-    
+    md:prose-h3:text-2xl prose-h3:text-xl
+
+    md:prose-h4:text-xl
+    prose-h4:text-lg
+
     
     prose-a:font-semibold prose-a:underline hover:prose-a:text-mainlight hover:prose-a:bg-maindark 
     
@@ -42,6 +47,8 @@ article.minimalist {
     prose-hr:border-maindark    
 
     prose-li:marker:m-0
+    prose-li:marker:text-maindark
+
 
     [&>iframe]:mx-auto
     [&>iframe]:w-[80%]

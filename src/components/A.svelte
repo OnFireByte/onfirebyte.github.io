@@ -6,7 +6,7 @@
 <a
     {href}
     target={newtab ? "_blank" : ""}
-    class="underline underline-offset-4 hover:text-mainlight hover:bg-maindark"
+    class="underline underline-offset-4 hover:text-mainlight hover:bg-maindark decoration-wavy pb-2 px-1"
 >
     <slot />
 </a>

@@ -61,7 +61,7 @@ function extractDesc(md: string) {
                                             <Image
                                                 src={v.data.cover}
                                                 alt=""
-                                                class="aspect-[4/3] lg:aspect-auto object-cover rounded sm:min-w-[16rem] lg:min-w-[10rem] h-full w-full sm:w-auto"
+                                                class={`aspect-[4/3] lg:aspect-auto object-cover rounded sm:min-w-[16rem] lg:min-w-[10rem] h-full w-full sm:w-auto border-2 border-maindark ${v.data.image_position}`}
                                                 transition:name={`image-${v.slug}`}
                                             />
                                         </div>
