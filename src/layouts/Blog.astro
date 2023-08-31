@@ -1,0 +1,47 @@
+---
+import Main from "@/components/Main.svelte";
+import Navbar from "@/components/Navbar.svelte";
+import "@/layouts/blog.css";
+import "@fontsource-variable/jetbrains-mono";
+
+type Props = {
+    title: string;
+    tags: string[];
+};
+
+const { title } = Astro.props;
+
+const noIndex = false;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={title} />
+        {noIndex && <meta name="robots" content="noindex" />}
+        <title>{title}</title>
+    </head>
+    <body class="bg-mainlight min-h-screen flex flex-col items-center">
+        <Navbar client:load />
+
+        <Main>
+            <article class="minimalist">
+                <slot />
+            </article>
+        </Main>
+    </body>
+</html>
+
+<style>
+    body {
+        font-family: "JetBrains Mono Variable", sans-serif;
+    }
+
+    ::selection {
+        @apply bg-indigo-400 bg-opacity-50 text-white;
+    }
+</style>

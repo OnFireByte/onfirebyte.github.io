@@ -1,11 +1,69 @@
 ---
 import Main from "@/components/Main.svelte";
 import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+// Get all entries from a collection.
+// Requires the name of the collection as an argument.
+// Example: retrieve `src/content/blog/**`
+const allBlogPosts = await getCollection("blog");
+allBlogPosts.sort((a, b) => {
+    return b.data.date.getTime() - a.data.date.getTime();
+});
+
+function extractDesc(md: string) {
+    const lines = md.trim().split("\n");
+
+    let desc = "";
+    for (const line of lines) {
+        if (line.startsWith("#")) break;
+        if (line.startsWith("```")) break;
+        if (line.startsWith("---")) break;
+        if (line == "") break;
+        desc += line + "\n";
+    }
+    return desc;
+}
 ---
 
 <Layout title="Not found">
     <Main class="flex justify-center flex-col">
-        <h1 class="lg:text-8xl text-5xl font-bold pb-4">Blog</h1>
-        <span class="text-xl">under construction 🏗️ 🚧</span>
+        <h1 class="lg:text-8xl text-5xl font-bold my-12">Blog</h1>
+        <div class="grid lg:grid-cols-2 gap-4">
+            {
+                allBlogPosts.map(async (v) => {
+                    return (
+                        <a href={`/blog/${v.slug}`} class="select-text">
+                            <div class="border-2 sm:h-52 border-maindark p-4 rounded flex flex-col-reverse sm:flex-row justify-between gap-4 hover:border-4 hover:rounded-3xl hover:p-[0.9rem] transition-all ease-in-out">
+                                <div class="flex flex-col justify-between gap-2">
+                                    <p class="text-sm line-clamp-5">
+                                        <span class="font-bold select-text text-lg block">
+                                            {v.data.title}
+                                        </span>
+                                        {extractDesc(v.body)}
+                                    </p>
+                                    <div class="flex gap-2 text-sm overflow-hidden ">
+                                        {v.data.tags.map((v) => (
+                                            <span class="rounded-full text-mainlight bg-maindark px-2 py-1">
+                                                {v}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                                {v.data.cover && (
+                                    <div class="h-full lg:shrink">
+                                        <img
+                                            src={v.data.cover?.src ?? ""}
+                                            alt=""
+                                            class="aspect-[4/3] lg:aspect-auto object-cover rounded sm:min-w-[16rem] lg:min-w-[10rem] h-full w-full sm:w-auto"
+                                        />
+                                    </div>
+                                )}
+                            </div>
+                        </a>
+                    );
+                })
+            }
+        </div>
     </Main>
 </Layout>

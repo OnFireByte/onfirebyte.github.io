@@ -1,0 +1,49 @@
+article.minimalist {
+    @apply prose prose-stone 
+
+    max-w-none
+    w-full
+
+    px-8
+    lg:px-0
+
+    prose-p:text-maindark
+
+    prose-headings:text-maindark
+    prose-headings:font-bold
+    prose-headings:my-4
+
+
+    prose-h2:mt-12
+    prose-h2:mb-8
+
+
+    m-0 py-8 print:pt-0 pt-20 
+
+    
+    md:prose-h1:text-6xl
+    prose-h1:text-[clamp(1rem,10vw,3rem)]
+    prose-h1:leading-[1.2]
+    md:prose-h1:leading-[1.2]
+    
+    md:prose-h2:text-4xl
+    prose-h2:text-3xl
+    
+    md:prose-h3:text-3xl
+    prose-h3:text-xl
+    
+    
+    
+    prose-a:font-semibold prose-a:underline hover:prose-a:text-mainlight hover:prose-a:bg-maindark 
+    
+    prose-li:text-sm prose-table:mt-4 prose-thead:border-0 prose-th:p-0
+    prose-th:font-medium prose-td:p-0 prose-td:text-stone-500
+
+    prose-hr:border-maindark    
+
+    prose-li:marker:m-0
+
+    
+    dark:bg-maindark
+    dark:prose-invert;
+}

@@ -3,9 +3,6 @@
 
     let screenSize: number;
     $: isMobile = screenSize < 768;
-    $: {
-        console.log(screenSize);
-    }
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
@@ -14,7 +11,10 @@
 >
     <a
         href="/"
-        class="text-2xl font-bold px-4 bg-maindark h-full text-mainlight flex items-end transition-all"
+        class={`text-2xl font-bold px-4 bg-maindark h-full text-mainlight flex items-end transition-all justify-center ${
+            isMobile ? "w-20" : "w-40"
+        }
+        `}
     >
         {#if isMobile}
             pk_
@@ -28,3 +28,15 @@
         <NavButton href="/contact">contact</NavButton>
     </div>
 </nav>
+
+<style scoped>
+    @keyframes cursor-blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .blink {
+        animation: cursor-blink 2s steps(1) infinite;
+    }
+</style>
