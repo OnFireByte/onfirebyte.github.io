@@ -34,31 +34,34 @@ function extractDesc(md: string) {
                 allBlogPosts.map(async (v) => {
                     return (
                         <a href={`/blog/${v.slug}`} class="select-text">
-                            <div class="border-2 sm:h-52 border-maindark p-4 rounded flex flex-col-reverse sm:flex-row justify-between gap-4 hover:border-4 hover:rounded-3xl hover:p-[0.9rem] transition-all ease-in-out">
-                                <div class="flex flex-col justify-between gap-2">
-                                    <p class="text-sm line-clamp-5">
-                                        <span class="font-bold select-text text-lg block">
-                                            {v.data.title}
-                                        </span>
-                                        {extractDesc(v.body)}
-                                    </p>
-                                    <div class="flex gap-2 text-sm overflow-hidden ">
-                                        {v.data.tags.map((v) => (
-                                            <span class="rounded-full text-mainlight bg-maindark px-2 py-1">
-                                                {v}
+                            <div class="relative contents-fit group">
+                                <div class="absolute bg-maindark w-full h-full z-[-10] rounded" />
+                                <div class="bg-mainlight border-2 sm:h-52 border-maindark p-4 rounded flex flex-col-reverse sm:flex-row justify-between gap-4 transition-all ease-in-out group-hover:translate-y-[-0.75rem] group-hover:translate-x-[-0.75rem]">
+                                    <div class="flex flex-col justify-between gap-2">
+                                        <p class="text-sm line-clamp-5">
+                                            <span class="font-bold select-text text-lg block">
+                                                {v.data.title}
                                             </span>
-                                        ))}
+                                            {extractDesc(v.body)}
+                                        </p>
+                                        <div class="flex gap-2 text-sm overflow-hidden ">
+                                            {v.data.tags.map((v) => (
+                                                <span class="rounded-full text-mainlight bg-maindark px-2 py-1">
+                                                    {v}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
+                                    {v.data.cover && (
+                                        <div class="h-full lg:shrink">
+                                            <img
+                                                src={v.data.cover?.src ?? ""}
+                                                alt=""
+                                                class="aspect-[4/3] lg:aspect-auto object-cover rounded sm:min-w-[16rem] lg:min-w-[10rem] h-full w-full sm:w-auto"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
-                                {v.data.cover && (
-                                    <div class="h-full lg:shrink">
-                                        <img
-                                            src={v.data.cover?.src ?? ""}
-                                            alt=""
-                                            class="aspect-[4/3] lg:aspect-auto object-cover rounded sm:min-w-[16rem] lg:min-w-[10rem] h-full w-full sm:w-auto"
-                                        />
-                                    </div>
-                                )}
                             </div>
                         </a>
                     );
