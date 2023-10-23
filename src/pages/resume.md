@@ -67,6 +67,13 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ## Projects
 
+## new myCourseVille (Upcoming Release)
+
+-   myCourseVille is a learning management system developed and used by Chulalongkorn University.
+-   I am an member of the project dedicated to overhauling the platform with modern technology stacks.
+-   My role primarily involve backend development and the implementation of development tools, utilizing GraphQL and Go.
+-   In the present phase, we are in the process of creating a GraphQL layer to communicate with the existing backend while also introducing new features.
+
 ### [CU Get Reg](https://cugetreg.com/)
 
 -   Cu Get Reg is student-driven website that help chula's student manage their courses.
