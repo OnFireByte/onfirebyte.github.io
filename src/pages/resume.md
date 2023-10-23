@@ -17,7 +17,7 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ### Chulalongkorn University
 
-#### Bachelor of Engineering Computer Engineering | GPAX 3.81 | Aug 2021 - Now
+#### Bachelor of Engineering Computer Engineering | GPAX 3.85 | Aug 2021 - Now
 
 -   Part of [Thinc.](https://thinc.in.th/): a student-run community aiming to make impact to society. Usually known as the place that gather all student that want to overengineer thier stuff.
 
