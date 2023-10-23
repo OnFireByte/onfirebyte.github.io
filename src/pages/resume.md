@@ -39,8 +39,10 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 -   Git, Github, Gitlab, zsh, fish, ssh, md, Docker, Vercel, PGQL, pnpm
 
----
+<hr className="print:hidden">
 
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
 <br className="hidden print:block"/>
 <br className="hidden print:block"/>
 <br className="hidden print:block"/>
@@ -67,11 +69,13 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ## Projects
 
-## new myCourseVille (Upcoming Release)
+### [new myCourseVille (Upcoming Release)](https://www.mycourseville.com/)
+
+#### Back End Engineer
 
 -   myCourseVille is a learning management system developed and used by Chulalongkorn University.
 -   I am an member of the project dedicated to overhauling the platform with modern technology stacks.
--   My role primarily involve backend development and the implementation of development tools, utilizing GraphQL and Go.
+-   My role primarily involve on backend development and the implementation of development tools, utilizing GraphQL and Go.
 -   In the present phase, we are in the process of creating a GraphQL layer to communicate with the existing backend while also introducing new features.
 
 ### [CU Get Reg](https://cugetreg.com/)
@@ -79,6 +83,15 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 -   Cu Get Reg is student-driven website that help chula's student manage their courses.
 -   CU Get Reg have to scrape all courses data from Reg Chula (university's official website) to serve in the website.
 -   Worked on optimizing and implementing rate limiting for scrapper using work queue.
+
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
 
 ### [thinc-awesome-stack](https://github.com/thinc-org/awesome-stack)
 
@@ -92,20 +105,13 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 -   Final project for Prog Meth I course.
 -   Hope that it will be my last time touching java...
 
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-
 ### [Harty](https://github.com/bpremika/Harty)
 
 -   POC website that help student find a party for carious acticity.
 -   Part of Thinc's 10-day-project, hackathon-ish event created for helping studentn learn new stuff.
 -   Worked as team mentor/advisor, UX/UI Designer, and deployment
 
-#### and some more stuffs in my [github...](https://github.com/OnFireByte)
+#### and some more stuffs in my [GitHub](https://github.com/OnFireByte)
 
 ---
 
