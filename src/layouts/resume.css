@@ -11,5 +11,5 @@ article.minimalist {
     dark:prose-invert
     prose-h4:dark:text-stone-400  
     sm:px-24 sm:py-14
-    sm:shadow-md lg:max-w-4xl prose-hr:my-12;
+    shadow-md print:shadow-none lg:max-w-4xl prose-hr:my-12;
 }

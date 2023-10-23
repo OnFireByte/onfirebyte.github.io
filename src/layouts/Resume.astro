@@ -35,13 +35,9 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
         <div class="h-16 print:h-0"></div>
         <div class="m-8 print:m-0">
             <article class="minimalist relative">
-                {
-                    pdfLink && (
-                        <div class="not-prose absolute right-8 top-8 print:top-0">
-                            <Download href={pdfLink} />
-                        </div>
-                    )
-                }
+                <div class="not-prose absolute right-8 top-8 print:top-0">
+                    <Download />
+                </div>
                 <slot />
             </article>
         </div>

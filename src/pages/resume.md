@@ -41,6 +41,16 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ---
 
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+
 ## Work Experience
 
 ### [Line Man Wongnai](https://lmwn.com/)
@@ -74,6 +84,13 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 -   Battle City's knock off, built on JavaFX.
 -   Final project for Prog Meth I course.
 -   Hope that it will be my last time touching java...
+
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
+<br className="hidden print:block"/>
 
 ### [Harty](https://github.com/bpremika/Harty)
 
