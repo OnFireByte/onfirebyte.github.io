@@ -1,5 +1,4 @@
 ---
-import Button from "@/components/Button.svelte";
 import BlogLayout from "@/layouts/Blog.astro";
 import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
@@ -18,7 +17,6 @@ const { Content } = await post.render();
 ---
 
 <BlogLayout title={post.data.title} tags={post.data.tags} og={post.data.cover?.src}>
-    <a href="/blog" class="hidden md:inline"><Button ghost class="mt-8">{"<"} Back</Button></a>
     {
         post.data.cover && (
             <div class="not-prose">
@@ -35,7 +33,14 @@ const { Content } = await post.render();
     <div class="mb-8 flex gap-2 text-sm">
         {
             post.data.tags.map((v) => (
-                <span class="rounded-full text-mainlight bg-maindark px-2 py-1">{v}</span>
+                <div class="not-prose">
+                    <a
+                        href={`/blog/tag/${v}`}
+                        class="not-prose rounded-full text-mainlight bg-maindark px-2 py-1"
+                    >
+                        {v}
+                    </a>
+                </div>
             ))
         }
     </div>

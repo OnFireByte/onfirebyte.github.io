@@ -1,8 +1,8 @@
 <script lang="ts">
     import NavButton from "@/components/NavButton.svelte";
-    import AddressBookIcon from "@public/address-book-solid.svg";
-    import BusinessIcon from "@public/briefcase-solid.svg";
-    import PenIcon from "@public/pen-solid.svg";
+    import AddressBookIcon from "@/icons/address-book-solid.svg";
+    import BusinessIcon from "@/icons/briefcase-solid.svg";
+    import PenIcon from "@/icons/pen-solid.svg";
 
     let screenSize: number;
     $: isMobile = screenSize < 768;
@@ -41,6 +41,7 @@
         >
     </div>
 </nav>
+<div class="h-16 print:h-0" />
 
 <style scoped>
     @keyframes cursor-blink {
