@@ -23,9 +23,16 @@ bodyClass ??= "";
         <ViewTransitions />
         <title>{title}</title>
     </head>
-    <body class="bg-mainlight min-h-screen flex flex-col">
-        <Navbar client:load transition:animate="none" transition:persist transition:name="nav" />
-        <div class={`${bodyClass} text-maindark justify-center flex h-full grow`}>
+    <body class="flex min-h-screen flex-col overflow-y-scroll bg-mainlight">
+        <Navbar
+            client:load
+            transition:animate="none"
+            transition:persist
+            transition:name="nav"
+        />
+        <div
+            class={`${bodyClass} text-maindark justify-center flex h-full grow`}
+        >
             <slot />
         </div>
         <style>

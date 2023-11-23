@@ -10,11 +10,11 @@
 
 <svelte:window bind:innerWidth={screenSize} />
 <nav
-    class="h-16 w-full bg-mainlight border-b-2 border-maindark fixed flex items-center justify-between z-50 print:hidden"
+    class="fixed z-50 flex h-16 w-full items-center justify-between border-b-2 border-maindark bg-mainlight print:hidden"
 >
     <a
         href="/"
-        class={`text-2xl font-bold px-4 bg-maindark h-full text-mainlight flex items-end transition-all justify-center ${
+        class={`flex h-full items-end justify-center bg-maindark px-4 text-2xl font-bold text-mainlight transition-all ${
             isMobile ? "w-20" : "w-40"
         }
         `}
@@ -25,20 +25,27 @@
             pkpt.dev_
         {/if}
     </a>
-    <div class="flex gap-0 h-full">
-        <NavButton href="/resume"
-            ><object
+    <div class="flex h-full gap-0">
+        <NavButton href="/resume">
+            <object
                 data={BusinessIcon.src}
-                class="w-5 mr-2 border-maindark"
+                class="mr-2 w-5 border-maindark"
                 title="Resume"
-            />resume</NavButton
-        >
-        <NavButton href="/blog"
-            ><object data={PenIcon.src} class="w-5 mr-2" title="Resume" />blog</NavButton
-        >
-        <NavButton href="/contact"
-            ><object data={AddressBookIcon.src} class="w-5 mr-2" title="Resume" />contact</NavButton
-        >
+            />
+            resume
+        </NavButton>
+        <NavButton href="/blog">
+            <object data={PenIcon.src} class="mr-2 w-5" title="Resume" />
+            blog
+        </NavButton>
+        <NavButton href="/contact">
+            <object
+                data={AddressBookIcon.src}
+                class="mr-2 w-5"
+                title="Resume"
+            />
+            contact
+        </NavButton>
     </div>
 </nav>
 <div class="h-16 print:h-0" />

@@ -4,7 +4,7 @@
 
 <a
     {href}
-    class="bg-transparent w-fit h-ful font-bold bg-mainlight px-4 hover:underline decoration-wavy underline-offset-4 flex items-center cursor-pointer transition-all ease-in-out text-maindark"
+    class="h-ful flex w-fit cursor-pointer items-center bg-mainlight bg-transparent px-4 font-bold text-maindark decoration-wavy underline-offset-4 transition-all ease-in-out hover:underline"
 >
     <slot />
 </a>

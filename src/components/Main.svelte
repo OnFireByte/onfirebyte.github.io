@@ -1,3 +1,6 @@
-<main class="{$$restProps.class || ''} xl:w-[1024px] w-full xl:px-0 px-8 lg:px-16 text-xl">
+<main
+    class="{$$restProps.class ||
+        ''} w-full px-8 text-xl lg:px-16 xl:w-[1024px] xl:px-0"
+>
     <slot />
 </main>

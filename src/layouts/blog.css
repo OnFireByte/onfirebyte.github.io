@@ -1,61 +1,61 @@
 article.minimalist {
     @apply prose prose-stone 
 
-    max-w-none
+    m-0
     w-full
 
+    max-w-none
     px-8
-    lg:px-0
 
-    prose-p:text-maindark
-    md:prose-p:text-lg
+    pb-8
+    pt-0
+
+    dark:prose-invert
+    prose-headings:my-4
+    prose-headings:font-bold
+
 
     prose-headings:text-maindark
-    prose-headings:font-bold
-    prose-headings:my-4
-
-
-    prose-h2:mt-12
-    prose-h2:mb-8
-
-
-    m-0 pb-8 pt-0
-
-    prose-blockquote:border-maindark
-    
-    md:prose-h1:text-6xl
     prose-h1:text-[clamp(1rem,10vw,3rem)]
-    prose-h1:leading-[1.2]
-    md:prose-h1:leading-[1.2]
-    prose-img:w-[80%]
-    md:prose-img:w-[400px]
-    prose-img:mx-auto
 
-    md:prose-h2:text-4xl prose-h2:text-3xl
+
+    prose-h1:leading-[1.2] prose-h2:mb-8 prose-h2:mt-12
+
+    prose-h2:text-3xl
     
-    md:prose-h3:text-2xl prose-h3:text-xl
+    prose-h3:text-xl
+    prose-h4:text-lg
+    prose-p:text-maindark
+    prose-a:font-semibold
+    prose-a:underline
+    hover:prose-a:bg-maindark
+    hover:prose-a:text-mainlight
+
+    prose-blockquote:border-maindark prose-li:text-sm
+    
+    prose-li:marker:m-0 prose-li:marker:text-maindark
+
+    prose-table:mt-4
+    prose-thead:border-0
+
+    
+    prose-th:p-0 prose-th:font-medium prose-td:p-0 prose-td:text-stone-500 
+    
+    prose-img:mx-auto prose-img:w-[80%] prose-hr:border-maindark dark:bg-maindark
+    md:prose-h1:text-6xl md:prose-h1:leading-[1.2] md:prose-h2:text-4xl
+
+    md:prose-h3:text-2xl    
 
     md:prose-h4:text-xl
-    prose-h4:text-lg
-
-    
-    prose-a:font-semibold prose-a:underline hover:prose-a:text-mainlight hover:prose-a:bg-maindark 
-    
-    prose-li:text-sm prose-table:mt-4 prose-thead:border-0 prose-th:p-0
-    prose-th:font-medium prose-td:p-0 prose-td:text-stone-500
-
-    prose-hr:border-maindark    
-
-    prose-li:marker:m-0
-    prose-li:marker:text-maindark
+    md:prose-p:text-lg
 
 
+    md:prose-img:w-[400px]
+    lg:px-0
     [&>iframe]:mx-auto
-    [&>iframe]:w-[80%]
-    [&>iframe]:max-w-[560px]
-    md:[&>iframe]:h-[315px]
     [&>iframe]:h-[216px]
+    [&>iframe]:w-[80%]
     
-    dark:bg-maindark
-    dark:prose-invert;
+    [&>iframe]:max-w-[560px]
+    md:[&>iframe]:h-[315px];
 }

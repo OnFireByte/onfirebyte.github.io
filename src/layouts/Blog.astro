@@ -27,8 +27,13 @@ const { title, og } = Astro.props;
 
         <title>{title}</title>
     </head>
-    <body class="bg-mainlight min-h-screen flex flex-col items-center">
-        <Navbar client:load transition:animate="none" transition:persist transition:name="nav" />
+    <body class="flex min-h-screen flex-col items-center bg-mainlight">
+        <Navbar
+            client:load
+            transition:animate="none"
+            transition:persist
+            transition:name="nav"
+        />
 
         <Main>
             <article class="minimalist">

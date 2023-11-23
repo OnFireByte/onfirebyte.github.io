@@ -6,7 +6,7 @@
 <a
     {href}
     target={newtab ? "_blank" : ""}
-    class={`underline underline-offset-4 hover:text-mainlight hover:bg-maindark decoration-wavy pb-2 px-1 ${$$props.class}`}
+    class={`px-1 pb-2 underline decoration-wavy underline-offset-4 hover:bg-maindark hover:text-mainlight ${$$props.class}`}
 >
     <slot />
 </a>
