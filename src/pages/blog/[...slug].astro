@@ -1,5 +1,5 @@
 ---
-import BlogLayout from "@/layouts/Blog.astro";
+import Blog from "@/layouts/Blog.astro";
 import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 
@@ -16,11 +16,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogLayout
-    title={post.data.title}
-    tags={post.data.tags}
-    og={post.data.cover?.src}
->
+<Blog title={post.data.title} tags={post.data.tags} og={post.data.cover?.src}>
     {
         post.data.cover && (
             <div class="not-prose">
@@ -34,13 +30,24 @@ const { Content } = await post.render();
         )
     }
     <h1 transition:name={`title-${post.slug}`}>{post.data.title}</h1>
-    <div class="mb-8 flex gap-2 text-sm">
+
+    <div class="mb-8 flex grow items-center gap-2 text-sm">
+        <span class="text-lg font-bold">
+            {
+                post.data.date.toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                })
+            }
+             •
+        </span>
         {
             post.data.tags.map((v) => (
                 <div class="not-prose">
                     <a
                         href={`/blog/tag/${v}`}
-                        class="not-prose rounded-full bg-maindark px-2 py-1 text-mainlight"
+                        class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
                     >
                         {v}
                     </a>
@@ -48,5 +55,6 @@ const { Content } = await post.render();
             ))
         }
     </div>
+
     <Content />
-</BlogLayout>
+</Blog>

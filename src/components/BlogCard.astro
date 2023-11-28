@@ -52,7 +52,7 @@ function extractDesc(md: string) {
                     v.data.tags.map((v) => (
                         <a
                             href={`/blog/tag/${v}`}
-                            class="rounded-full bg-maindark px-2 py-1 text-mainlight"
+                            class="box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
                         >
                             {v}
                         </a>
