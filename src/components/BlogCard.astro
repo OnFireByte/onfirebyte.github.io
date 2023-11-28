@@ -1,4 +1,5 @@
 ---
+import { extractDesc } from "@/utils/string";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
@@ -11,20 +12,6 @@ type Props = {
 };
 
 const { post: v } = Astro.props;
-
-function extractDesc(md: string) {
-    const lines = md.trim().split("\n");
-
-    let desc = "";
-    for (const line of lines) {
-        if (line.startsWith("#")) break;
-        if (line.startsWith("```")) break;
-        if (line.startsWith("---")) break;
-        if (line == "") break;
-        desc += line + "\n";
-    }
-    return desc;
-}
 ---
 
 <div

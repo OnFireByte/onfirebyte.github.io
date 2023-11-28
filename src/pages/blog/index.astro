@@ -16,8 +16,8 @@ allBlogPosts.sort((a, b) => {
 
 <Layout title="Blog - pkpt">
     <Main class="flex flex-col justify-center">
-        <h1 class="my-12 text-5xl font-bold lg:text-8xl">Blog</h1>
-        <div class="grid gap-4 lg:grid-cols-2">
+        <h1 class="my-6 text-5xl font-bold lg:my-12 lg:text-8xl">Blog</h1>
+        <div class="mb-4 grid gap-4 lg:grid-cols-2">
             {
                 allBlogPosts.map((v) => {
                     return <BlogCard post={v} />;

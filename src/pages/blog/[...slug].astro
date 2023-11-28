@@ -31,7 +31,10 @@ const { Content } = await post.render();
     }
     <h1 transition:name={`title-${post.slug}`}>{post.data.title}</h1>
 
-    <div class="mb-8 flex grow items-center gap-2 text-sm">
+    <div
+        class="mb-8 flex grow flex-wrap items-center gap-2 gap-y-4 text-sm"
+        transition:name={`blog-meta-${post.slug}`}
+    >
         <span class="text-lg font-bold">
             {
                 post.data.date.toLocaleDateString(undefined, {
@@ -42,18 +45,20 @@ const { Content } = await post.render();
             }
              •
         </span>
-        {
-            post.data.tags.map((v) => (
-                <div class="not-prose">
-                    <a
-                        href={`/blog/tag/${v}`}
-                        class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
-                    >
-                        {v}
-                    </a>
-                </div>
-            ))
-        }
+        <div class="flex flex-wrap gap-2 gap-y-4">
+            {
+                post.data.tags.map((v) => (
+                    <div class="not-prose">
+                        <a
+                            href={`/blog/tag/${v}`}
+                            class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
+                        >
+                            {v}
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
     </div>
 
     <Content />

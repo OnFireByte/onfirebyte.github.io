@@ -1,15 +1,124 @@
 ---
 import Main from "@/components/Main.svelte";
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    const allTags = posts.flatMap((post) => post.data.tags);
+    const tags = [...new Set(allTags)];
+    return tags.map((tag) => ({
+        params: { slug: tag },
+        props: {
+            tag,
+        },
+    }));
+}
+
+const allBlogPosts = await getCollection("blog");
+allBlogPosts.sort((a, b) => {
+    return b.data.date.getTime() - a.data.date.getTime();
+});
+
+const lastestBlogPosts = allBlogPosts[0];
 ---
 
+<style>
+    hr.wavy {
+        border: none;
+    }
+    hr.wavy:after {
+        content: "∿∿∿∿∿∿∿∿";
+        /* Ratio -> font-size/letter-spacing = 6.25 */
+        letter-spacing: -9.6px;
+        font-size: 60px;
+    }
+</style>
+
 <Layout title="Home - pkpt">
-    <Main class="flex flex-col justify-center">
-        <h1 class="pb-4 text-5xl font-bold lg:text-8xl">Hello!</h1>
-        <p>
-            pkpt is literally abbreviation of <font class="font-bold"
-                >"Pakin Puttanukulchai"</font
+    <Main class="lg-48 flex flex-col justify-center px-12">
+        <article class="flex h-[calc(100vh-4rem)] flex-col justify-center">
+            <h1 class="mb-4 text-5xl font-bold lg:text-8xl">Hello!</h1>
+            <p class="mb-8">
+                pkpt is literally abbreviation of <font class="font-bold"
+                    >"Pakin Puttanukulchai"</font
+                >
+            </p>
+
+            <h2 class="mb-4 text-2xl font-bold">TLDR RESUME;</h2>
+            <ul class="list-disc px-5">
+                <li>Back End Software Engineer</li>
+                <li>Go, Typescript, Python</li>
+                <li>Indie Music Lover</li>
+                <li>Audiophile</li>
+                <li>Keyboard Enthusiast</li>
+            </ul>
+            <span
+                class="absolute bottom-8 left-1/2 mx-auto animate-bounce text-2xl font-bold md:bottom-24"
             >
-        </p>
+                ↓</span
+            >
+        </article>
+        <article
+            class="flex h-[max(calc(100vh-4rem),700px)] flex-col justify-center"
+        >
+            <h1 class="my-8 text-3xl font-bold md:text-5xl">Latest Blog</h1>
+
+            <div
+                class="mx-4 rounded-lg border-4 border-maindark bg-mainlight p-4 md:p-8 lg:mb-12"
+            >
+                <a href={`blog/${lastestBlogPosts.slug}`}>
+                    <Image
+                        src={lastestBlogPosts.data.cover!}
+                        alt={lastestBlogPosts.data.title}
+                        class={`mx-auto mt-0 aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] my-4 rounded-lg ${lastestBlogPosts.data.image_position}`}
+                        transition:name={`image-${lastestBlogPosts.slug}`}
+                        loading="lazy"
+                    />
+                </a>
+                <a href={`blog/${lastestBlogPosts.slug}`}>
+                    <h1
+                        transition:name={`title-${lastestBlogPosts.slug}`}
+                        class="my-4 text-3xl font-bold leading-[1.2] md:text-6xl md:leading-[1.2]"
+                    >
+                        {lastestBlogPosts.data.title}
+                    </h1>
+                </a>
+
+                <div
+                    class="flex grow flex-wrap items-center gap-2 gap-y-4 text-sm"
+                    transition:name={`blog-meta-${lastestBlogPosts.slug}`}
+                >
+                    <span class="text-lg font-bold">
+                        {
+                            lastestBlogPosts.data.date.toLocaleDateString(
+                                undefined,
+                                {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                },
+                            )
+                        }
+                        <span class="hidden md:inline"> •</span>
+                    </span>
+                    <div class="flex flex-wrap gap-2 gap-y-4">
+                        {
+                            lastestBlogPosts.data.tags.map((v) => (
+                                <div class="not-prose">
+                                    <a
+                                        href={`/blog/tag/${v}`}
+                                        class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
+                                    >
+                                        {v}
+                                    </a>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </article>
     </Main>
 </Layout>

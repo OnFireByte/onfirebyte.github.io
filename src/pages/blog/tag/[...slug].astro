@@ -24,27 +24,13 @@ allBlogPosts.sort((a, b) => {
 });
 
 const blogPosts = allBlogPosts.filter((v) => v.data.tags.includes(tag));
-
-function extractDesc(md: string) {
-    const lines = md.trim().split("\n");
-
-    let desc = "";
-    for (const line of lines) {
-        if (line.startsWith("#")) break;
-        if (line.startsWith("```")) break;
-        if (line.startsWith("---")) break;
-        if (line == "") break;
-        desc += line + "\n";
-    }
-    return desc;
-}
 ---
 
 <Layout title="Blog - pkpt">
     <Main class="flex flex-col justify-center">
-        <h1 class="my-4 text-5xl font-bold lg:text-8xl">Blog</h1>
-        <h2 class="mb-12 text-xl font-bold lg:text-3xl">#{tag}</h2>
-        <div class="grid gap-4 lg:grid-cols-2">
+        <h1 class="my-2 text-5xl font-bold lg:my-4 lg:text-8xl">Blog</h1>
+        <h2 class="mb-6 text-xl font-bold lg:mb-12 lg:text-3xl">#{tag}</h2>
+        <div class="mb-4 grid gap-4 lg:grid-cols-2">
             {blogPosts.map((v) => <BlogCard post={v} />)}
         </div>
     </Main>
