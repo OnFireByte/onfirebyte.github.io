@@ -69,21 +69,25 @@ const lastestBlogPosts = allBlogPosts[0];
                 class="mx-4 rounded-lg border-4 border-maindark bg-mainlight p-4 md:p-8 lg:mb-12"
             >
                 <a href={`blog/${lastestBlogPosts.slug}`}>
-                    <Image
-                        src={lastestBlogPosts.data.cover!}
-                        alt={lastestBlogPosts.data.title}
-                        class={`mx-auto mt-0 aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] my-4 rounded-lg ${lastestBlogPosts.data.image_position}`}
+                    <div
+                        class="mx-auto my-4 mt-0 aspect-auto h-[200px] overflow-hidden rounded-lg object-cover md:h-[250px] lg:h-[350px]"
                         transition:name={`image-${lastestBlogPosts.slug}`}
-                        loading="lazy"
-                    />
+                    >
+                        <Image
+                            src={lastestBlogPosts.data.cover!}
+                            alt={lastestBlogPosts.data.title}
+                            class={`aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] hover:scale-105 ease-in-out transition-all ${lastestBlogPosts.data.image_position}`}
+                            loading="lazy"
+                        />
+                    </div>
                 </a>
                 <a href={`blog/${lastestBlogPosts.slug}`}>
-                    <h1
+                    <h2
                         transition:name={`title-${lastestBlogPosts.slug}`}
                         class="my-4 text-3xl font-bold leading-[1.2] md:text-6xl md:leading-[1.2]"
                     >
                         {lastestBlogPosts.data.title}
-                    </h1>
+                    </h2>
                 </a>
 
                 <div
