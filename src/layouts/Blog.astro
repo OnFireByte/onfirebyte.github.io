@@ -23,7 +23,7 @@ const { title, og } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={title} />
         {og && <meta property="og:image" content={og} />}
-        <ViewTransitions />
+        <ViewTransitions fallback="swap" />
 
         <title>{title}</title>
     </head>
