@@ -24,18 +24,6 @@ allBlogPosts.sort((a, b) => {
 const lastestBlogPosts = allBlogPosts[0];
 ---
 
-<style>
-    hr.wavy {
-        border: none;
-    }
-    hr.wavy:after {
-        content: "∿∿∿∿∿∿∿∿";
-        /* Ratio -> font-size/letter-spacing = 6.25 */
-        letter-spacing: -9.6px;
-        font-size: 60px;
-    }
-</style>
-
 <Layout title="Home - pkpt">
     <Main class="lg-48 flex flex-col justify-center px-12">
         <article class="flex h-[calc(100vh-4rem)] flex-col justify-center">
