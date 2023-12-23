@@ -3,9 +3,9 @@ title: "Lambda Calculus: มีแค่ function ก็สร้างคอม
 tags:
     - math
     - turing completeness
-cover: "./images/pkpt.png"
+cover: "./images/lambda.png"
 date: 2023-09-03
-image_position: object-bottom
+image_position: object-center
 ---
 
 คำเตือน: แนะนำว่าถ้าไม่รู้จัก Turing Machine ให้ไปอ่านก่อนจะดีกว่า
