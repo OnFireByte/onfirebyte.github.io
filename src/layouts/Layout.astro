@@ -1,4 +1,5 @@
 ---
+import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@fontsource-variable/jetbrains-mono";
 import { ViewTransitions } from "astro:transitions";
@@ -13,7 +14,7 @@ bodyClass ??= "";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-maindark">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
@@ -35,11 +36,7 @@ bodyClass ??= "";
         >
             <slot />
         </div>
-        <div
-            class="flex items-center justify-center bg-maindark p-2 text-mainlight"
-        >
-            All right reserved © by Pakin P.
-        </div>
+        <Footer />
         <style>
             body {
                 font-family: "JetBrains Mono Variable", sans-serif;

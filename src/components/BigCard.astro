@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    blog: CollectionEntry<"blog">;
+    class?: string;
+}
+
+const { blog, class: className } = Astro.props;
+console.log(blog);
+---
+
+<div
+    class:list={[
+        "rounded-lg border-4 border-maindark bg-mainlight p-4 md:p-8",
+        className,
+    ]}
+>
+    <a href={`/blog/${blog.slug}`}>
+        <div
+            class="mx-auto my-4 mt-0 aspect-auto h-[200px] overflow-hidden rounded-lg object-cover md:h-[250px] lg:h-[350px]"
+            transition:name={`image-${blog.slug}`}
+        >
+            <Image
+                src={blog.data.cover!}
+                alt={blog.data.title}
+                class={`aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] hover:scale-105 ease-in-out transition-all ${blog.data.image_position}`}
+                loading="lazy"
+            />
+        </div>
+    </a>
+    <a href={`/blog/${blog.slug}`}>
+        <h2
+            transition:name={`title-${blog.slug}`}
+            class="my-4 text-3xl font-bold leading-[1.2] md:text-6xl md:leading-[1.2]"
+        >
+            {blog.data.title}
+        </h2>
+    </a>
+
+    <div
+        class="flex grow flex-wrap items-center gap-2 gap-y-4 text-sm"
+        transition:name={`blog-meta-${blog.slug}`}
+    >
+        <span class="text-lg font-bold">
+            {
+                blog.data.date.toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                })
+            }
+            <span class="hidden md:inline"> •</span>
+        </span>
+        <div class="flex flex-wrap gap-2 gap-y-4">
+            {
+                blog.data.tags.map((v) => (
+                    <div class="not-prose">
+                        <a
+                            href={`/blog/tag/${v}`}
+                            class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
+                        >
+                            {v}
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>

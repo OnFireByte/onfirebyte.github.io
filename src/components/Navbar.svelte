@@ -1,8 +1,7 @@
 <script lang="ts">
     import NavButton from "@/components/NavButton.svelte";
-    import AddressBookIcon from "@/icons/address-book-solid.svg";
-    import BusinessIcon from "@/icons/briefcase-solid.svg";
-    import PenIcon from "@/icons/pen-solid.svg";
+    import Briefcase from "@/icons/Briefcase.svelte";
+    import Pen from "@/icons/Pen.svelte";
 
     let screenSize: number;
     $: isMobile = screenSize < 768;
@@ -27,24 +26,12 @@
     </a>
     <div class="flex h-full gap-0">
         <NavButton href="/resume">
-            <object
-                data={BusinessIcon.src}
-                class="mr-2 w-5 border-maindark"
-                title="Resume"
-            />
+            <Briefcase class="mr-2 block h-5 w-5 border-maindark" />
             resume
         </NavButton>
         <NavButton href="/blog">
-            <object data={PenIcon.src} class="mr-2 w-5" title="Resume" />
+            <Pen class="mr-2 block h-5 w-5 border-maindark" />
             blog
-        </NavButton>
-        <NavButton href="/contact">
-            <object
-                data={AddressBookIcon.src}
-                class="mr-2 w-5"
-                title="Resume"
-            />
-            contact
         </NavButton>
     </div>
 </nav>

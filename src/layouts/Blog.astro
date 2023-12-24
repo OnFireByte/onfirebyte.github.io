@@ -1,4 +1,5 @@
 ---
+import Footer from "@/components/Footer.svelte";
 import Main from "@/components/Main.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/blog.css";
@@ -40,11 +41,8 @@ const { title, og } = Astro.props;
                 <slot />
             </article>
         </Main>
-        <div
-            class="flex w-full items-center justify-center bg-maindark p-2 text-mainlight"
-        >
-            All right reserved © by Pakin P.
-        </div>
+        <Footer />
+
         <style>
             body {
                 font-family: "JetBrains Mono Variable", sans-serif;

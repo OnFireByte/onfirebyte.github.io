@@ -1,4 +1,5 @@
 ---
+import BigCard from "@/components/BigCard.astro";
 import BlogCard from "@/components/BlogCard.astro";
 import Main from "@/components/Main.svelte";
 import Layout from "@/layouts/Layout.astro";
@@ -17,10 +18,19 @@ allBlogPosts.sort((a, b) => {
 <Layout title="Blog - pkpt">
     <Main class="flex flex-col justify-center">
         <h1 class="my-6 text-5xl font-bold lg:my-12 lg:text-8xl">Blog</h1>
-        <div class="mb-4 grid gap-4 lg:grid-cols-2">
+        <div class="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <BigCard
+                class="hidden lg:col-span-2 lg:block"
+                blog={allBlogPosts[0]}
+            />
             {
-                allBlogPosts.map((v) => {
-                    return <BlogCard post={v} />;
+                allBlogPosts.map((v, i) => {
+                    return (
+                        <BlogCard
+                            post={v}
+                            class={i == 0 ? "block lg:hidden" : ""}
+                        />
+                    );
                 })
             }
         </div>

@@ -17,7 +17,7 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ### Chulalongkorn University
 
-#### Bachelor of Engineering Computer Engineering | GPAX 3.85 | Aug 2021 - Now
+#### B.Eng. Computer Engineering | GPAX 3.85 | Aug 2021 - Now
 
 -   Part of [Thinc.](https://thinc.in.th/): a student-run community aiming to make impact to society. Usually known as the place that gather all student that want to overengineer thier stuff.
 
@@ -29,15 +29,15 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ### Language
 
--   **Go**, **TypeScript**, **Python**, Scala, Java, C, C++, Rust, Nim, V
+-   **Go**, **TypeScript**, **Python**, Rust, Scala, Java, C, C++
 
 ### Library / Framework
 
--   **Fiber**, **Express**, **Next**, **Tailwind**, **Svelte**, Prisma, Gin, NestJS, FastAPI, Numpy
+-   **Fiber**, **Express**, **Tailwind**, **Svelte**, **React**, Gin, NestJS, FastAPI, Numpy, gqlgen
 
 ### Tools
 
--   Git, Github, Gitlab, zsh, fish, ssh, md, Docker, Vercel, PGQL, pnpm
+-   Git, Github, Gitlab, Docker, Vercel, PostgreSQL, pnpm
 
 <hr className="print:hidden">
 
