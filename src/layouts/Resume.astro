@@ -1,5 +1,6 @@
 ---
 import Download from "@/components/Download.astro";
+import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/resume.css";
 import "@fontsource-variable/jetbrains-mono";
@@ -18,7 +19,7 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-maindark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -44,6 +45,7 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
                 <slot />
             </article>
         </div>
+        <Footer />
         <style>
             body {
                 font-family: "JetBrains Mono Variable", sans-serif;

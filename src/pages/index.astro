@@ -48,10 +48,17 @@ const lastestBlogPosts = allBlogPosts[0];
                 ↓</span
             >
         </article>
-        <article class="flex flex-col justify-center gap-8 pb-16">
+        <article class="flex flex-col justify-center gap-8 pb-8">
             <h1 class="text-3xl font-bold md:text-5xl">Latest Blog</h1>
 
-            <BigCard blog={lastestBlogPosts} />
+            <div class="flex flex-col gap-4">
+                <BigCard blog={lastestBlogPosts} />
+                <a
+                    href="/blog"
+                    class="ml-auto cursor-pointer rounded-md p-2 hover:bg-maindark hover:text-mainlight"
+                    >More blog?</a
+                >
+            </div>
         </article>
     </Main>
 </Layout>

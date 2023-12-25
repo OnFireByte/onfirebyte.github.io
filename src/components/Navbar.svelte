@@ -2,14 +2,34 @@
     import NavButton from "@/components/NavButton.svelte";
     import Briefcase from "@/icons/Briefcase.svelte";
     import Pen from "@/icons/Pen.svelte";
+    import { onMount } from "svelte";
 
     let screenSize: number;
     $: isMobile = screenSize < 768;
+
+    let scrollY: number = 0;
+    let show: boolean = true;
+
+    onMount(() => {
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > scrollY && currentScrollY > 100) {
+                show = false;
+            } else {
+                show = true;
+            }
+            scrollY = currentScrollY;
+        });
+    });
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
+
 <nav
-    class="fixed z-50 flex h-16 w-full items-center justify-between border-b-2 border-maindark bg-mainlight print:hidden"
+    class={`fixed z-50 flex h-16 w-full  items-center justify-between border-b-2 border-maindark bg-mainlight
+     transition-all duration-500 ease-in-out print:hidden ${
+         show ? "" : "translate-y-[-100%]"
+     }`}
 >
     <a
         href="/"
