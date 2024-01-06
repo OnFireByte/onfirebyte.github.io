@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/resume.css";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
 
 type Props = {
@@ -47,10 +48,6 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
         </div>
         <Footer />
         <style>
-            body {
-                font-family: "JetBrains Mono Variable", sans-serif;
-            }
-
             ::selection {
                 @apply bg-indigo-400 bg-opacity-50 text-white;
             }

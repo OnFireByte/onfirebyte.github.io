@@ -1,6 +1,8 @@
 import svelte from "@astrojs/svelte";
 import { defineConfig } from "astro/config";
 
+import remedyLight from "./shiki/remedy-light.json";
+
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
@@ -10,7 +12,7 @@ export default defineConfig({
         shikiConfig: {
             // Choose from Shiki's built-in themes (or add your own)
             // https://github.com/shikijs/shiki/blob/main/docs/themes.md
-            theme: "rose-pine-dawn",
+            theme: remedyLight,
             // Add custom languages
             // Note: Shiki has countless langs built-in, including .astro!
             // https://github.com/shikijs/shiki/blob/main/docs/languages.md

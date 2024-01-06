@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
@@ -37,10 +38,5 @@ bodyClass ??= "";
             <slot />
         </div>
         <Footer />
-        <style>
-            body {
-                font-family: "JetBrains Mono Variable", sans-serif;
-            }
-        </style>
     </body>
 </html>

@@ -11,6 +11,18 @@ module.exports = {
                 mainlight: colors.amber["50"],
                 maindark: colors.stone["700"],
             },
+            fontFamily: {
+                sans: [
+                    "JetBrains Mono Variable",
+                    "IBM Plex Sans Thai Looped",
+                    "sans-serif",
+                ],
+                mono: [
+                    "JetBrains Mono Variable",
+                    "IBM Plex Sans Thai Looped",
+                    "monospace",
+                ],
+            },
         },
     },
 

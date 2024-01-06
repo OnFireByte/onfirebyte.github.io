@@ -19,12 +19,13 @@ article.minimalist {
     prose-h1:text-[clamp(1rem,10vw,3rem)]
     prose-h1:leading-[1.2]
 
+    prose-h2:mb-8
 
-    prose-h2:mb-8 prose-h2:mt-12 prose-h2:text-3xl
 
-    prose-h3:text-xl
-    
+    prose-h2:mt-12 prose-h2:text-3xl prose-h3:text-xl
+
     prose-h4:text-lg
+    
     prose-p:text-maindark
     prose-a:font-semibold
     prose-a:underline

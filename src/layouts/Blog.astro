@@ -4,6 +4,7 @@ import Main from "@/components/Main.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/blog.css";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
 
 type Props = {
@@ -44,10 +45,6 @@ const { title, og } = Astro.props;
         <Footer />
 
         <style>
-            body {
-                font-family: "JetBrains Mono Variable", sans-serif;
-            }
-
             ::selection {
                 @apply bg-indigo-400 bg-opacity-50 text-white;
             }
