@@ -17,7 +17,7 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ### Chulalongkorn University
 
-#### B.Eng. Computer Engineering | GPAX 3.85 | Aug 2021 - Now
+#### B.Eng. Computer Engineering | GPAX 3.87 | Aug 2021 - Now (3rd year)
 
 -   Part of [Thinc.](https://thinc.in.th/): a student-run community aiming to make impact to society. Usually known as the place that gather all student that want to overengineer thier stuff.
 
@@ -69,14 +69,14 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ## Projects
 
-### [new myCourseVille (Upcoming Release)](https://www.mycourseville.com/)
+### [myCourseVille Next Gen (Upcoming Release)](https://mycourseville.webflow.io/)
 
 #### Back End Engineer
 
 -   myCourseVille is a learning management system developed and used by Chulalongkorn University.
 -   I am an member of the project dedicated to overhauling the platform with modern technology stacks.
 -   My role primarily involve on backend development and the implementation of development tools, utilizing GraphQL and Go.
--   In the present phase, we are in the process of creating a GraphQL layer to communicate with the existing backend while also introducing new features.
+-   In the present phase, we are in the process of creating a GraphQL gateway to communicate with the existing backend while also introducing new features.
 
 ### [CU Get Reg](https://cugetreg.com/)
 
