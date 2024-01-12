@@ -43,15 +43,25 @@ article.minimalist {
     
     prose-th:font-medium prose-td:p-0 prose-td:text-stone-500 prose-img:mx-auto 
     
-    md:prose-h1:text-6xl md:prose-h1:leading-[1.2] md:prose-h2:text-4xl
+    prose-img:max-h-[600px] prose-img:max-w-full 
+    
+    prose-hr:mx-auto
 
-    md:prose-h3:text-2xl    
+    prose-hr:w-[60%]    
 
+    prose-hr:rounded-full 
+    prose-hr:border-2
+    prose-hr:border-maindark
+    md:prose-h1:text-6xl
+    md:prose-h1:leading-[1.2]
+
+    md:prose-h2:text-4xl
+    md:prose-h3:text-2xl
     md:prose-h4:text-xl
+
     md:prose-p:text-lg
 
 
-    md:prose-img:w-[400px]
     lg:px-16
     [&>iframe]:mx-auto
     [&>iframe]:h-[216px]

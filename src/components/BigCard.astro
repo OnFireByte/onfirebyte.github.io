@@ -27,7 +27,7 @@ const { blog, class: className } = Astro.props;
                 <Image
                     src={blog.data.cover!}
                     alt={blog.data.title}
-                    class={`aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] group-hover:scale-105 ease-in-out transition-all ${blog.data.image_position}`}
+                    class={`aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] group-hover:scale-105 ease-in-out transition-all ${blog.data.image_position} min-w-full`}
                     loading="lazy"
                 />
             </div>
