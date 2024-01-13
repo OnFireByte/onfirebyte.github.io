@@ -1,5 +1,6 @@
 import svelte from "@astrojs/svelte";
 import { defineConfig } from "astro/config";
+import rehypeExternalLinks from "rehype-external-links";
 
 import remedyLight from "./shiki/remedy-light.json";
 
@@ -20,5 +21,13 @@ export default defineConfig({
             // Enable word wrap to prevent horizontal scrolling
             wrap: true,
         },
+        rehypePlugins: [
+            [
+                rehypeExternalLinks,
+                {
+                    target: "_blank",
+                },
+            ],
+        ],
     },
 });
