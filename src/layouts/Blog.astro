@@ -39,7 +39,7 @@ const { title, og } = Astro.props;
 
         <slot />
 
-        <div class="bg fixed -z-10 h-full w-full md:border-hidden"></div>
+        <div class="bg fixed -z-10 h-full w-full"></div>
         <Footer />
 
         <style>
@@ -48,7 +48,7 @@ const { title, og } = Astro.props;
             }
 
             .bg {
-                filter: contrast(95%) brightness(1000%) !important;
+                filter: contrast(93%) brightness(1200%);
                 background: radial-gradient(
                         circle at 100% 0%,
                         rgba(0, 0, 255, 1),
@@ -73,7 +73,7 @@ const { title, og } = Astro.props;
             }
             @media (min-width: 768px) {
                 .bg {
-                    filter: contrast(93%) brightness(1200%) !important;
+                    filter: contrast(93%) brightness(1400%) !important;
 
                     background: radial-gradient(
                             circle at 0% 0%,
@@ -83,7 +83,7 @@ const { title, og } = Astro.props;
                         linear-gradient(
                             110deg,
                             rgba(215, 0, 255, 0.4),
-                            rgba(255, 0, 0, 0)
+                            rgba(0, 0, 0, 0)
                         ),
                         radial-gradient(
                             circle at 100% 80%,
@@ -96,7 +96,7 @@ const { title, og } = Astro.props;
 
             @media (min-width: 1024px) {
                 .bg {
-                    filter: contrast(93%) brightness(1000%) !important;
+                    filter: contrast(93%) brightness(1200%);
                 }
             }
         </style>

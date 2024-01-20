@@ -6,6 +6,7 @@ import "@/layouts/resume.css";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
+import Circle from "./Circle.svelte";
 import "./main.css";
 
 type Props = {
@@ -21,7 +22,7 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
 ---
 
 <!doctype html>
-<html lang="en" class="bg-maindark">
+<html lang="en" class="relative">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -47,8 +48,35 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
                 <slot />
             </article>
         </div>
-        <div class="grad-bg fixed -z-10 h-full w-full"></div>
         <Footer />
+        <div
+            class="absolute -z-10 h-full w-full overflow-hidden mix-blend-multiply"
+        >
+            <Circle class="grad-bg-pink" top="0px" left="0px" size="1548" />
+
+            <Circle
+                class="grad-bg-blue-pink"
+                top="0px"
+                right="0px"
+                size="1548"
+            />
+
+            <Circle class="grad-bg-blue" top="45%" left="30%" size="1048" />
+
+            <Circle
+                class="grad-bg-blue-pink"
+                top="55%"
+                right="30%"
+                size="1048"
+            />
+
+            <Circle
+                class="grad-bg-blue-pink -rotate-90"
+                bottom="0px"
+                left="10%"
+                size="2048"
+            />
+        </div>
         <style>
             ::selection {
                 @apply bg-indigo-400 bg-opacity-50 text-white;

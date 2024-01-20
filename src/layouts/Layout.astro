@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar.svelte";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
+import Circle from "./Circle.svelte";
 import "./main.css";
 
 interface Props {
@@ -16,7 +17,7 @@ bodyClass ??= "";
 ---
 
 <!doctype html>
-<html lang="en" class="bg-maindark">
+<html lang="en" class="bg-white">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
@@ -25,23 +26,37 @@ bodyClass ??= "";
         <meta name="generator" content={Astro.generator} />
         <ViewTransitions fallback="swap" />
         <title>{title}</title>
-        <style></style>
     </head>
-    <body class="">
-        <div class="relative flex min-h-screen flex-col overflow-y-scroll">
-            <Navbar
-                client:load
-                transition:animate="none"
-                transition:persist
-                transition:name="nav"
+    <body class="relative flex min-h-screen flex-col overflow-y-scroll">
+        <Navbar
+            client:load
+            transition:animate="none"
+            transition:persist
+            transition:name="nav"
+        />
+        <div
+            class={`${bodyClass} text-maindark justify-center flex h-full grow`}
+        >
+            <slot />
+        </div>
+        <Footer />
+        <div
+            class="absolute -z-10 h-full w-full overflow-hidden mix-blend-multiply"
+        >
+            <Circle class="grad-bg-pink" top="0px" left="0px" size="1548" />
+            <Circle
+                class="grad-bg-blue-pink"
+                top="0px"
+                right="0px"
+                size="1548"
             />
-            <div
-                class={`${bodyClass} text-maindark justify-center flex h-full grow`}
-            >
-                <slot />
-            </div>
-            <Footer />
-            <div class="grad-bg fixed -z-10 h-full w-full md:absolute"></div>
+
+            <Circle
+                class="grad-bg-blue-pink -rotate-90"
+                bottom="0px"
+                left="10%"
+                size="2048"
+            />
         </div>
     </body>
 </html>
