@@ -27,19 +27,21 @@ bodyClass ??= "";
         <title>{title}</title>
         <style></style>
     </head>
-    <body class="flex min-h-screen flex-col overflow-y-scroll">
-        <Navbar
-            client:load
-            transition:animate="none"
-            transition:persist
-            transition:name="nav"
-        />
-        <div
-            class={`${bodyClass} text-maindark justify-center flex h-full grow`}
-        >
-            <slot />
+    <body class="">
+        <div class="relative flex min-h-screen flex-col overflow-y-scroll">
+            <Navbar
+                client:load
+                transition:animate="none"
+                transition:persist
+                transition:name="nav"
+            />
+            <div
+                class={`${bodyClass} text-maindark justify-center flex h-full grow`}
+            >
+                <slot />
+            </div>
+            <Footer />
+            <div class="grad-bg fixed -z-10 h-full w-full md:absolute"></div>
         </div>
-        <div class="grad-bg fixed -z-10 h-full w-full"></div>
-        <Footer />
     </body>
 </html>

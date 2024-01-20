@@ -18,3 +18,9 @@
         ),
         url("./noise.svg");
 }
+
+@media (max-width: 768px) {
+    .grad-bg {
+        filter: contrast(97%) brightness(2000%) !important;
+    }
+}

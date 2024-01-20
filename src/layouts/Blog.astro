@@ -29,7 +29,7 @@ const { title, og } = Astro.props;
 
         <title>{title}</title>
     </head>
-    <body class="flex min-h-screen flex-col items-center bg-mainlight">
+    <body class="relative flex min-h-screen flex-col items-center">
         <Navbar
             client:load
             transition:animate="none"
@@ -39,7 +39,7 @@ const { title, og } = Astro.props;
 
         <slot />
 
-        <div class="bg fixed -z-10 hidden h-full w-full md:block"></div>
+        <div class="bg fixed -z-10 h-full w-full md:border-hidden"></div>
         <Footer />
 
         <style>
@@ -48,23 +48,56 @@ const { title, og } = Astro.props;
             }
 
             .bg {
-                filter: contrast(100%) brightness(1000%);
+                filter: contrast(95%) brightness(1000%) !important;
                 background: radial-gradient(
-                        circle at -50% 100%,
+                        circle at 100% 0%,
                         rgba(0, 0, 255, 1),
                         rgba(0, 0, 0, 0)
                     ),
                     linear-gradient(
-                        304deg,
+                        110deg,
                         rgba(215, 0, 255, 1),
                         rgba(255, 0, 0, 0)
                     ),
                     radial-gradient(
-                        circle at 55% -50%,
-                        rgba(0, 0, 255, 1),
-                        rgba(0, 255, 255, 0)
+                        circle at 30% 50%,
+                        rgba(255, 255, 255, 1),
+                        rgba(0, 0, 0, 0)
+                    ),
+                    radial-gradient(
+                        circle at 70% 50%,
+                        rgba(255, 255, 255, 1),
+                        rgba(0, 0, 0, 0)
                     ),
                     url("./noise.svg");
+            }
+            @media (min-width: 768px) {
+                .bg {
+                    filter: contrast(93%) brightness(1200%) !important;
+
+                    background: radial-gradient(
+                            circle at 0% 0%,
+                            rgba(0, 0, 255, 1),
+                            rgba(0, 0, 0, 0)
+                        ),
+                        linear-gradient(
+                            110deg,
+                            rgba(215, 0, 255, 0.4),
+                            rgba(255, 0, 0, 0)
+                        ),
+                        radial-gradient(
+                            circle at 100% 80%,
+                            rgba(0, 0, 255, 1),
+                            rgba(0, 0, 0, 0)
+                        ),
+                        url("./noise.svg");
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .bg {
+                    filter: contrast(93%) brightness(1000%) !important;
+                }
             }
         </style>
     </body>

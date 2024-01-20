@@ -8,7 +8,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                mainlight: "#f1f1f1",
+                mainlight: "#fafafa",
                 maindark: colors.stone["700"],
             },
             fontFamily: {
