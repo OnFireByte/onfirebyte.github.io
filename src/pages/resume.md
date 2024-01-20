@@ -25,6 +25,8 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 #### Science-Math | GPAX 3.97 | May 2014 - Feb 2021
 
+<hr className="print:hidden">
+
 ## Technology
 
 ### Language
@@ -65,7 +67,7 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 -   Developed and maintained a Golang project that aimed at enhancing user experience and improving the overall functionality of the platform
 
----
+<hr className="print:hidden">
 
 ## Projects
 
@@ -73,7 +75,6 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 #### Back End Engineer
 
--   myCourseVille is a learning management system developed and used by Chulalongkorn University.
 -   I am an member of the project dedicated to overhauling the platform with modern technology stacks.
 -   My role primarily involve on backend development and the implementation of development tools, utilizing GraphQL and Go.
 -   In the present phase, we are in the process of creating a GraphQL gateway to communicate with the existing backend while also introducing new features.
@@ -84,41 +85,12 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 -   CU Get Reg have to scrape all courses data from Reg Chula (university's official website) to serve in the website.
 -   Worked on optimizing and implementing rate limiting for scrapper using work queue.
 
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-<br className="hidden print:block"/>
-
-### [thinc-awesome-stack](https://github.com/thinc-org/awesome-stack)
-
--   List of awesome things to add to your stack curated with love by Thinc. Powered by magic of ChatGPT (literally) and free github action.
--   1 day project by 3 people, automately add new project to md and website using only the url.
--   Worked on CI, binding between discord bot and github action, implementing ChatGPT's suggestion.
-
-### [Tank-Game](https://github.com/OnFireByte/Tank-Game)
-
--   Battle City's knock off, built on JavaFX.
--   Final project for Prog Meth I course.
--   Hope that it will be my last time touching java...
-
-### [Harty](https://github.com/bpremika/Harty)
-
--   POC website that help student find a party for carious acticity.
--   Part of Thinc's 10-day-project, hackathon-ish event created for helping studentn learn new stuff.
--   Worked as team mentor/advisor, UX/UI Designer, and deployment
-
 #### and some more stuffs in my [GitHub](https://github.com/OnFireByte)
 
----
+<hr className="print:hidden">
 
 ## Misc
 
 -   Got 1st place in Algorithm Design course of 2022
 -   Got 1st place in Programming Methodology course of 2022
--   Mechanical keyboard lover
--   Audiophile + Indie music lover
--   Install Linux once in a while to do fun stuff
+-   Mechanical keyboard lover, Audiophile + Indie music lover

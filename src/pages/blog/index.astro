@@ -13,11 +13,51 @@ const allBlogPosts = await getCollection("blog");
 allBlogPosts.sort((a, b) => {
     return b.data.date.getTime() - a.data.date.getTime();
 });
+
+const tagMap = new Map<string, number>();
+
+allBlogPosts.forEach((v) => {
+    v.data.tags.forEach((v) => {
+        if (tagMap.has(v)) {
+            tagMap.set(v, tagMap.get(v)! + 1);
+        } else {
+            tagMap.set(v, 1);
+        }
+    });
+});
+
+const tags = [];
+
+for (const [key, value] of tagMap.entries()) {
+    if (value >= 2) {
+        tags.push(key);
+    }
+}
+
+tags.sort((a, b) => {
+    return tagMap.get(b)! - tagMap.get(a)!;
+});
 ---
 
 <Layout title="Blog - pkpt">
-    <Main class="flex flex-col justify-center pb-8">
-        <h1 class="my-6 text-5xl font-bold lg:my-12 lg:text-8xl">Blog</h1>
+    <Main class="flex flex-col justify-center px-6 pb-8 lg:px-0">
+        <a href="/blog">
+            <h1 class="my-6 text-5xl font-bold lg:mt-12 lg:text-8xl">Blog</h1>
+        </a>
+        <div class="mb-6 flex flex-wrap gap-2 gap-y-2 lg:mb-12">
+            {
+                tags.map((v) => (
+                    <div class="not-prose">
+                        <a
+                            href={`/blog/tag/${v}`}
+                            class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-sm text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
+                        >
+                            {v}
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
         <div class="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
             <BigCard
                 class="hidden lg:col-span-2 lg:block"

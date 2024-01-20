@@ -26,7 +26,7 @@
 <svelte:window bind:innerWidth={screenSize} />
 
 <nav
-    class={`fixed z-50 flex h-16 w-full  items-center justify-between border-b-2 border-maindark bg-mainlight
+    class={`fixed z-50 flex h-16 w-full  items-center justify-between border-b-2 border-maindark bg-mainlight/80 backdrop-blur-md
      transition-all duration-500 ease-in-out print:hidden ${
          show ? "" : "translate-y-[-100%]"
      }`}

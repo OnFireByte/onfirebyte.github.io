@@ -5,64 +5,67 @@ article.minimalist {
     w-full
 
     max-w-none
+
     px-4
     pb-8
-
     pt-0
     dark:prose-invert
 
+    
     prose-headings:my-4
+
     prose-headings:font-bold
     prose-headings:text-maindark
-
-
     prose-h1:text-[clamp(1rem,10vw,3rem)]
-    prose-h1:leading-[1.2]
 
+
+    prose-h1:leading-[1.2]
     prose-h2:mb-8
 
+    prose-h2:mt-12
 
-    prose-h2:mt-12 prose-h2:text-3xl prose-h3:text-xl
 
-    prose-h4:text-lg
-    
+    prose-h2:text-3xl prose-h3:text-xl prose-h4:text-lg
+
     prose-p:text-maindark
+    
     prose-a:font-semibold
     prose-a:underline
     hover:prose-a:bg-maindark
     hover:prose-a:text-mainlight
     prose-blockquote:border-maindark
+    prose-li:text-sm
 
-    prose-li:text-sm prose-li:marker:m-0
+    prose-li:marker:m-0 prose-li:marker:text-maindark
     
-    prose-li:marker:text-maindark prose-table:mt-4
+    prose-table:mt-4 prose-thead:border-0
 
-    prose-thead:border-0
     prose-th:p-0
+    prose-th:font-medium
 
     
-    prose-th:font-medium prose-td:p-0 prose-td:text-stone-500 prose-img:mx-auto 
+    prose-td:p-0 prose-td:text-stone-500 prose-img:mx-auto prose-img:max-h-[600px] 
     
-    prose-img:max-h-[600px] prose-img:max-w-full 
+    prose-img:max-w-full prose-hr:mx-auto 
     
-    prose-hr:mx-auto
+    prose-hr:w-[60%]
 
-    prose-hr:w-[60%]    
+    prose-hr:rounded-full    
 
-    prose-hr:rounded-full 
-    prose-hr:border-2
+    prose-hr:border-2 
     prose-hr:border-maindark
+    md:px-0
+    md:px-16
     md:prose-h1:text-6xl
-    md:prose-h1:leading-[1.2]
 
+    md:prose-h1:leading-[1.2]
     md:prose-h2:text-4xl
     md:prose-h3:text-2xl
+
     md:prose-h4:text-xl
 
-    md:prose-p:text-lg
 
-
-    lg:px-16
+    md:prose-p:text-base
     [&>iframe]:mx-auto
     [&>iframe]:h-[216px]
     [&>iframe]:w-[80%]

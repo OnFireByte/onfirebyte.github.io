@@ -1,4 +1,5 @@
 ---
+import Main from "@/components/Main.svelte";
 import Blog from "@/layouts/Blog.astro";
 import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
@@ -23,43 +24,48 @@ const { Content } = await post.render();
                 <Image
                     src={post.data.cover}
                     alt={post.data.title}
-                    class={`mx-auto mt-0 aspect-auto h-[228px] object-cover md:h-[300px] lg:h-[420px] ${post.data.image_position}`}
+                    class={`mx-auto mt-0 aspect-auto max-h-[300px] object-cover  lg:max-h-[400px] lg:min-w-[800px] lg:max-w-[calc(100%,max-content)] ${post.data.image_position}`}
                     transition:name={`image-${post.slug}`}
                 />
             </div>
         )
     }
-    <h1 transition:name={`title-${post.slug}`}>{post.data.title}</h1>
 
-    <div
-        class="mb-8 flex grow flex-wrap items-center gap-2 gap-y-4 text-sm"
-        transition:name={`blog-meta-${post.slug}`}
-    >
-        <span class="text-lg font-bold">
-            {
-                post.data.date.toLocaleDateString(undefined, {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                })
-            }
-             •
-        </span>
-        <div class="flex flex-wrap gap-2 gap-y-4">
-            {
-                post.data.tags.map((v) => (
-                    <div class="not-prose">
-                        <a
-                            href={`/blog/tag/${v}`}
-                            class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
-                        >
-                            {v}
-                        </a>
-                    </div>
-                ))
-            }
-        </div>
-    </div>
+    <Main class="px-2 sm:px-4 lg:px-0">
+        <article class="minimalist">
+            <h1 transition:name={`title-${post.slug}`}>{post.data.title}</h1>
 
-    <Content />
+            <div
+                class="mb-8 flex grow flex-wrap items-center gap-2 gap-y-4 text-sm"
+                transition:name={`blog-meta-${post.slug}`}
+            >
+                <span class="text-lg font-bold">
+                    {
+                        post.data.date.toLocaleDateString(undefined, {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                        })
+                    }
+                     •
+                </span>
+                <div class="flex flex-wrap gap-2 gap-y-4">
+                    {
+                        post.data.tags.map((v) => (
+                            <div class="not-prose">
+                                <a
+                                    href={`/blog/tag/${v}`}
+                                    class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
+                                >
+                                    {v}
+                                </a>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <Content />
+        </article>
+    </Main>
 </Blog>

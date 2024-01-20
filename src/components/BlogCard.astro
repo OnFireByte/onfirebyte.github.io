@@ -15,48 +15,49 @@ type Props = {
 const { post: v, class: className } = Astro.props;
 ---
 
-<div
-    class:list={["contents-fit group relative rounded bg-maindark", className]}
+<a
+    class:list={[
+        "contents-fit group relative cursor-pointer rounded backdrop-blur-md",
+        className,
+    ]}
     transition:name={`blog-card-${v.slug}`}
+    href={`/blog/${v.slug}`}
 >
     <div
-        class="flex flex-col-reverse justify-between gap-4 rounded border-4 border-maindark bg-mainlight p-4 transition-all ease-in-out group-hover:translate-x-[-0.75rem] group-hover:translate-y-[-0.75rem] sm:h-52 sm:flex-row"
+        class="flex flex-col-reverse justify-between gap-4 rounded border-4 border-maindark bg-mainlight/50 p-4 transition-all ease-in-out hover:bg-mainlight
+        sm:h-52 sm:flex-row"
     >
         <div class="flex flex-col justify-between gap-2">
             <p class="line-clamp-5 text-sm">
-                <a
-                    class="block select-text text-lg font-bold decoration-wavy underline-offset-4 hover:underline"
+                <span
+                    class="block select-text text-lg font-bold"
                     transition:name={`title-${v.slug}`}
-                    href={`/blog/${v.slug}`}
                 >
                     {v.data.title}
-                </a>
+                </span>
                 {extractDesc(v.body)}
             </p>
-            <div class="flex gap-2 overflow-hidden text-sm">
+            <div class="flex h-7 flex-wrap gap-x-2 overflow-hidden text-sm">
                 {
                     v.data.tags.map((v) => (
-                        <a
-                            href={`/blog/tag/${v}`}
-                            class="box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
-                        >
+                        <div class="box-border h-7 overflow-clip rounded-full border-2 border-maindark bg-maindark px-2 py-[2px] text-mainlight transition-all">
                             {v}
-                        </a>
+                        </div>
                     ))
                 }
             </div>
         </div>
         {
             v.data.cover && (
-                <a href={`/blog/${v.slug}`} class="h-full lg:shrink">
+                <div class="aspect-[4/3] h-full overflow-hidden rounded-lg border-2 border-maindark object-cover sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] lg:shrink">
                     <Image
                         src={v.data.cover}
                         alt=""
-                        class={`aspect-[4/3] h-full w-full rounded border-2 border-maindark object-cover sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] ${v.data.image_position}`}
+                        class={`aspect-[4/3] h-full w-full rounded object-cover transition-all ease-in-out group-hover:scale-105 sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] ${v.data.image_position}`}
                         transition:name={`image-${v.slug}`}
                     />
-                </a>
+                </div>
             )
         }
     </div>
-</div>
+</a>

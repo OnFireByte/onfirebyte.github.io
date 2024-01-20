@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar.svelte";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
+import "./main.css";
 
 interface Props {
     title: string;
@@ -24,8 +25,9 @@ bodyClass ??= "";
         <meta name="generator" content={Astro.generator} />
         <ViewTransitions fallback="swap" />
         <title>{title}</title>
+        <style></style>
     </head>
-    <body class="flex min-h-screen flex-col overflow-y-scroll bg-mainlight">
+    <body class="flex min-h-screen flex-col overflow-y-scroll">
         <Navbar
             client:load
             transition:animate="none"
@@ -37,6 +39,7 @@ bodyClass ??= "";
         >
             <slot />
         </div>
+        <div class="grad-bg fixed -z-10 h-full w-full"></div>
         <Footer />
     </body>
 </html>

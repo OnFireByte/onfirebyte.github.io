@@ -10,36 +10,36 @@ interface Props {
 const { blog, class: className } = Astro.props;
 ---
 
-<div
+<a
+    href={`/blog/${blog.slug}`}
     class:list={[
-        "contents-fit group relative rounded-lg bg-maindark",
+        "contents-fit group relative rounded-lg backdrop-blur-lg",
         className,
     ]}
 >
     <div
-        class="rounded-lg border-4 border-maindark bg-mainlight p-4 transition-all ease-in-out group-hover:translate-x-[-0.75rem] group-hover:translate-y-[-0.75rem] md:p-8"
+        class="rounded-lg border-4 border-maindark bg-mainlight/50 p-4 transition-all ease-in-out hover:bg-mainlight md:p-8"
     >
-        <a href={`/blog/${blog.slug}`}>
-            <div
-                class="mx-auto my-4 mt-0 aspect-auto h-[200px] overflow-hidden rounded-lg object-cover md:h-[250px] lg:h-[350px]"
-                transition:name={`image-${blog.slug}`}
-            >
-                <Image
-                    src={blog.data.cover!}
-                    alt={blog.data.title}
-                    class={`aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] group-hover:scale-105 ease-in-out transition-all ${blog.data.image_position} min-w-full`}
-                    loading="lazy"
-                />
-            </div>
-        </a>
-        <a href={`/blog/${blog.slug}`}>
+        <div
+            class="mx-auto my-4 mt-0 aspect-auto h-[200px] overflow-hidden rounded-lg object-cover md:h-[250px] lg:h-[350px]"
+            transition:name={`image-${blog.slug}`}
+        >
+            <Image
+                src={blog.data.cover!}
+                alt={blog.data.title}
+                class={`aspect-auto h-[200px] object-cover md:h-[250px] lg:h-[350px] group-hover:scale-105 ease-in-out transition-all ${blog.data.image_position} min-w-full`}
+                loading="lazy"
+            />
+        </div>
+
+        <div class="">
             <h2
                 transition:name={`title-${blog.slug}`}
                 class="my-4 text-3xl font-bold leading-[1.2] md:text-6xl md:leading-[1.2]"
             >
                 {blog.data.title}
             </h2>
-        </a>
+        </div>
 
         <div
             class="flex grow flex-wrap items-center gap-2 gap-y-4 text-sm"
@@ -59,16 +59,13 @@ const { blog, class: className } = Astro.props;
                 {
                     blog.data.tags.map((v) => (
                         <div class="not-prose">
-                            <a
-                                href={`/blog/tag/${v}`}
-                                class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
-                            >
+                            <div class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight">
                                 {v}
-                            </a>
+                            </div>
                         </div>
                     ))
                 }
             </div>
         </div>
     </div>
-</div>
+</a>

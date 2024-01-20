@@ -6,6 +6,7 @@ import "@/layouts/resume.css";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
+import "./main.css";
 
 type Props = {
     frontmatter: {
@@ -31,7 +32,7 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
         <ViewTransitions fallback="swap" />
         <title>{title}</title>
     </head>
-    <body class="flex min-h-screen flex-col items-center bg-mainlight">
+    <body class="flex min-h-screen flex-col items-center">
         <Navbar
             client:load
             transition:animate="none"
@@ -46,6 +47,7 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
                 <slot />
             </article>
         </div>
+        <div class="grad-bg fixed -z-10 h-full w-full"></div>
         <Footer />
         <style>
             ::selection {
