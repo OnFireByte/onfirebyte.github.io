@@ -1,7 +1,7 @@
 ---
 title: '"YENTED & PLASUI PLASUI" By LIDO LIVEHOUSE'
 tags:
-    - music
+    - art and music
     - plasui plasui
     - yented
 cover: "./images/plasui-yented-poster.jpg"

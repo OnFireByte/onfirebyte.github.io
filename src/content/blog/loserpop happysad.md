@@ -1,7 +1,7 @@
 ---
 title: "Happysad: อัลบั้มใหม่จาก loserpop ที่มาแบบงง ๆ"
 tags:
-    - music
+    - art and music
     - loserpop
 cover: "./images/loserpop_happysad.jpg"
 date: 2023-11-28

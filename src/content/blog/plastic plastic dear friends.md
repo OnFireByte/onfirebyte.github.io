@@ -1,7 +1,7 @@
 ---
 title: "Dear Friends Concert: คอนเสิร์ตเดี่ยวของวงสุดที่รักที่ไม่ได้ไปสะงั้น"
 tags:
-    - music
+    - art and music
     - plastic plastic
 cover: "./images/plasticplastic-dearfriend.jpeg"
 date: 2023-08-30

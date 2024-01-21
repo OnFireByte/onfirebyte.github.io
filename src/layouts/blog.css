@@ -46,7 +46,7 @@ article.minimalist {
     
     prose-td:p-0 prose-td:text-stone-500 prose-img:mx-auto prose-img:max-h-[600px] 
     
-    prose-img:max-w-full prose-hr:mx-auto 
+    prose-img:max-w-full prose-hr:mx-auto prose-img:object-cover
     
     prose-hr:w-[60%]
 
