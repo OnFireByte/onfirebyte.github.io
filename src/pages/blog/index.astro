@@ -58,18 +58,20 @@ tags.sort((a, b) => {
                 ))
             }
         </div>
-        <div class="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <BigCard
-                class="hidden lg:col-span-2 lg:block"
-                blog={allBlogPosts[0]}
-            />
+        <div class="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-1">
+            <BigCard class="hidden lg:block" blog={allBlogPosts[0]} />
             {
                 allBlogPosts.map((v, i) => {
                     return (
-                        <BlogCard
-                            post={v}
-                            class={i == 0 ? "block lg:hidden" : ""}
-                        />
+                        <>
+                            {i != 0 && (
+                                <div class=" mx-auto w-[80%] border-y-[1px] border-maindark" />
+                            )}
+                            <BlogCard
+                                post={v}
+                                class={i == 0 ? "block lg:hidden" : ""}
+                            />
+                        </>
                     );
                 })
             }

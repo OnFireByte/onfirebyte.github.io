@@ -1,6 +1,6 @@
 article.minimalist {
     @apply prose prose-stone m-0
-    max-w-fit bg-white px-12 py-8 pt-20 shadow-md dark:prose-invert prose-h1:text-3xl prose-h1:uppercase prose-h2:mb-0 prose-h2:mt-10 prose-h2:text-sm
+    max-w-fit bg-white px-12 py-8 pt-20 shadow-lg dark:prose-invert prose-h1:text-3xl prose-h1:uppercase prose-h2:mb-0 prose-h2:mt-10 prose-h2:text-sm
     prose-h2:uppercase prose-h2:text-stone-600
     prose-h3:mb-1 prose-h3:mt-2 prose-h3:text-xl prose-h3:uppercase prose-h4:mb-2 
     prose-h4:mt-1 prose-h4:text-sm prose-h4:text-stone-600 prose-p:my-2
@@ -11,6 +11,6 @@ article.minimalist {
     prose-td:text-stone-500
     prose-hr:my-12  
     dark:bg-stone-800 prose-h4:dark:text-stone-400
-    print:pt-0 print:shadow-none sm:px-24 sm:py-14
-    lg:max-w-4xl;
+    sm:px-24 sm:py-14 lg:max-w-4xl print:pt-0
+    print:shadow-none;
 }

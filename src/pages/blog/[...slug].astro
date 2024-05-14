@@ -25,7 +25,6 @@ const { Content } = await post.render();
                     src={post.data.cover}
                     alt={post.data.title}
                     class={`mx-auto mt-0 aspect-auto max-h-[300px] object-cover  lg:max-h-[400px] lg:min-w-[800px] lg:max-w-[calc(100%,max-content)] ${post.data.image_position}`}
-                    transition:name={`image-${post.slug}`}
                 />
             </div>
         )
@@ -47,7 +46,7 @@ const { Content } = await post.render();
                             day: "numeric",
                         })
                     }
-                     •
+                    •
                 </span>
                 <div class="flex flex-wrap gap-2 gap-y-4">
                     {

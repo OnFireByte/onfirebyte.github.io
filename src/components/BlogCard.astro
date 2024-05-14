@@ -24,20 +24,44 @@ const { post: v, class: className } = Astro.props;
     href={`/blog/${v.slug}`}
 >
     <div
-        class="flex flex-col-reverse justify-between gap-4 rounded border-4 border-maindark bg-mainlight/50 p-4 transition-all ease-in-out hover:bg-mainlight
-        sm:h-52 sm:flex-row"
+        class="group flex flex-col justify-between gap-4 rounded p-4 transition-all ease-in-out
+        hover:bg-mainlight sm:h-52 sm:flex-row"
     >
+        {
+            v.data.cover && (
+                <div class="aspect-[21/9] h-full overflow-hidden rounded-lg  object-cover sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] lg:shrink">
+                    <Image
+                        src={v.data.cover}
+                        alt=""
+                        class={` h-full w-full rounded object-cover transition-all ease-in-out group-hover:scale-105 sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] ${v.data.image_position}`}
+                        transition:name={`image-${v.slug}`}
+                    />
+                </div>
+            )
+        }
         <div class="flex flex-col justify-between gap-2">
             <p class="line-clamp-5 text-sm">
                 <span
-                    class="block select-text text-lg font-bold"
+                    class="block select-text text-lg font-bold decoration-wavy decoration-2 underline-offset-4 transition-all ease-in-out hover:text-maindark group-hover:underline"
                     transition:name={`title-${v.slug}`}
                 >
                     {v.data.title}
                 </span>
                 {extractDesc(v.body)}
             </p>
-            <div class="flex h-7 flex-wrap gap-x-2 overflow-hidden text-sm">
+            <div
+                class="flex h-7 flex-wrap items-center gap-x-2 overflow-hidden text-sm"
+            >
+                <span class="font-bold">
+                    {
+                        v.data.date.toLocaleDateString(undefined, {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                        })
+                    }
+                    <span class="hidden md:inline"> •</span>
+                </span>
                 {
                     v.data.tags.map((v) => (
                         <div class="box-border h-7 overflow-clip rounded-full border-2 border-maindark bg-maindark px-2 py-[2px] text-mainlight transition-all">
@@ -47,17 +71,5 @@ const { post: v, class: className } = Astro.props;
                 }
             </div>
         </div>
-        {
-            v.data.cover && (
-                <div class="aspect-[4/3] h-full overflow-hidden rounded-lg border-2 border-maindark object-cover sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] lg:shrink">
-                    <Image
-                        src={v.data.cover}
-                        alt=""
-                        class={`aspect-[4/3] h-full w-full rounded object-cover transition-all ease-in-out group-hover:scale-105 sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] ${v.data.image_position}`}
-                        transition:name={`image-${v.slug}`}
-                    />
-                </div>
-            )
-        }
     </div>
 </a>

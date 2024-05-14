@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar.svelte";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
-import Circle from "./Circle.svelte";
 import "./main.css";
 
 interface Props {
@@ -27,7 +26,7 @@ bodyClass ??= "";
         <ViewTransitions fallback="swap" />
         <title>{title}</title>
     </head>
-    <body class="relative flex min-h-screen flex-col overflow-y-scroll">
+    <body class="relative flex min-h-screen flex-col overflow-y-scroll bg-mainlight">
         <Navbar
             client:load
             transition:animate="none"
@@ -43,20 +42,6 @@ bodyClass ??= "";
         <div
             class="absolute -z-10 h-full w-full overflow-hidden mix-blend-multiply"
         >
-            <Circle class="grad-bg-pink" top="0px" left="0px" size="1548" />
-            <Circle
-                class="grad-bg-blue-pink"
-                top="0px"
-                right="0px"
-                size="1548"
-            />
-
-            <Circle
-                class="grad-bg-blue-pink -rotate-90"
-                bottom="0px"
-                left="10%"
-                size="2048"
-            />
         </div>
     </body>
 </html>
