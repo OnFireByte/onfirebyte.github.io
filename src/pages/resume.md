@@ -71,7 +71,7 @@ Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity
 
 ## Projects
 
-### [myCourseVille Next Gen (Upcoming Release)](https://mycourseville.webflow.io/)
+### [myCourseVille Next Gen](https://alpha.mycourseville.com)
 
 #### Back End Engineer
 

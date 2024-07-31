@@ -9,11 +9,13 @@ module.exports = {
         extend: {
             colors: {
                 mainlight: "#fafafa",
+                secondlight: "#d5d5d4",
+                select: "#edede8",
                 maindark: colors.stone["700"],
             },
             fontFamily: {
                 sans: [
-                    "JetBrains Mono Variable",
+                    "Rubik Variable",
                     "IBM Plex Sans Thai Looped",
                     "sans-serif",
                 ],
@@ -22,6 +24,20 @@ module.exports = {
                     "IBM Plex Sans Thai Looped",
                     "monospace",
                 ],
+            },
+            keyframes: {
+                wiggle: {
+                    "0%, 100%": { transform: "rotate(-5deg)" },
+                    "50%": { transform: "rotate(5deg)" },
+                },
+                "wiggle-small": {
+                    "0%, 100%": { transform: "rotate(-3deg)" },
+                    "50%": { transform: "rotate(3deg)" },
+                },
+            },
+            animation: {
+                wiggle: "wiggle 1s ease-in-out infinite",
+                "wiggle-small": "wiggle-small 1s ease-in-out infinite",
             },
         },
     },

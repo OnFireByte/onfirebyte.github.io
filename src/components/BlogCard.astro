@@ -29,11 +29,11 @@ const { post: v, class: className } = Astro.props;
     >
         {
             v.data.cover && (
-                <div class="aspect-[21/9] h-full overflow-hidden rounded-lg  object-cover sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] lg:shrink">
+                <div class="aspect-[21/9] h-full overflow-hidden rounded-lg  object-cover sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:shrink">
                     <Image
                         src={v.data.cover}
                         alt=""
-                        class={` h-full w-full rounded object-cover transition-all ease-in-out group-hover:scale-105 sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:min-w-[10rem] ${v.data.image_position}`}
+                        class={` h-full w-full rounded object-cover object-center transition-all ease-in-out group-hover:scale-105 sm:w-auto lg:w-64 ${v.data.image_position}`}
                         transition:name={`image-${v.slug}`}
                     />
                 </div>
@@ -60,7 +60,7 @@ const { post: v, class: className } = Astro.props;
                             day: "numeric",
                         })
                     }
-                    <span class="hidden md:inline"> •</span>
+                    <span class="ml-1 hidden md:inline">•</span>
                 </span>
                 {
                     v.data.tags.map((v) => (
