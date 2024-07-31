@@ -3,7 +3,7 @@ title: "Dear Friends Concert: คอนเสิร์ตเดี่ยวข�
 tags:
     - art and music
     - plastic plastic
-cover: "./images/plasticplastic-dearfriend.jpeg"
+cover: "./images/plasticplastic-dearfriend.jpg"
 date: 2023-08-30
 ---
 
