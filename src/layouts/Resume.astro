@@ -34,12 +34,7 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
         <title>{title}</title>
     </head>
     <body class="min-h-screen bg-mainlight print:m-0">
-        <Navbar
-            client:load
-            transition:animate="none"
-            transition:persist
-            transition:name="nav"
-        />
+        <Navbar client:load />
         <div class="m-8 flex flex-col items-center">
             <article class="minimalist relative">
                 <div

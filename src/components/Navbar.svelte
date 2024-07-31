@@ -27,23 +27,27 @@
 
 <nav
     class={`fixed z-50 flex w-full items-center justify-between bg-mainlight
-     transition-all duration-500 ease-in-out xl:m-4 xl:h-auto
-     xl:w-auto xl:flex-col xl:items-start xl:gap-6 xl:bg-transparent
-     xl:p-4
+     transition-all duration-500 ease-in-out xl:mx-4
+     xl:h-auto xl:w-auto xl:flex-col xl:items-start xl:gap-2
+     xl:bg-transparent
+     xl:px-4
      print:hidden
      ${show ? "" : "translate-y-[-100%] xl:translate-y-[0%]"}`}
 >
     <a
         href="/"
-        class={`xl:hover:text flex h-16 items-end justify-center bg-maindark
-        px-4 text-2xl font-bold text-mainlight
-        decoration-wavy transition-all xl:h-16
+        class={`xl:hover:text flex h-16 items-end justify-center
+        px-4 text-2xl font-bold
+        text-maindark decoration-wavy transition-all
+        [view-transition-name:nav-name]
+        xl:mt-6
+        xl:h-fit
         xl:justify-start
+        xl:rounded-lg
         xl:bg-transparent
-        xl:px-0
-        xl:text-maindark
+        xl:p-4
+        xl:hover:bg-select
         xl:hover:font-extrabold
-        xl:hover:tracking-widest
         ${isMobile ? "w-20" : "w-40"}
         `}
     >
@@ -53,7 +57,12 @@
             pkpt.dev_
         {/if}
     </a>
-    <div class="flex h-full gap-2 px-4 xl:flex-col xl:gap-4 xl:px-0">
+    <div
+        class="flex h-full gap-2 rounded-lg px-4
+        [view-transition-name:nav-menu] xl:flex-col xl:gap-2
+        xl:p-2
+        "
+    >
         <NavButton href="/resume">
             <Briefcase
                 class="

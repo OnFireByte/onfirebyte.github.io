@@ -17,7 +17,7 @@ const { post: v, class: className } = Astro.props;
 
 <a
     class:list={[
-        "contents-fit group relative cursor-pointer rounded backdrop-blur-md",
+        "contents-fit group relative cursor-pointer rounded",
         className,
     ]}
     transition:name={`blog-card-${v.slug}`}
@@ -29,11 +29,11 @@ const { post: v, class: className } = Astro.props;
     >
         {
             v.data.cover && (
-                <div class="aspect-[21/9] h-full overflow-hidden rounded-lg  object-cover sm:w-auto sm:min-w-[16rem] lg:aspect-auto lg:shrink">
+                <div class="aspect-[21/9] h-full overflow-hidden rounded-lg  object-cover sm:aspect-auto sm:min-w-[12rem] sm:shrink md:min-w-[16rem]">
                     <Image
                         src={v.data.cover}
                         alt=""
-                        class={` h-full w-full rounded object-cover object-center transition-all ease-in-out group-hover:scale-105 sm:w-auto lg:w-64 ${v.data.image_position}`}
+                        class={` h-full w-full rounded object-cover object-center transition-all ease-in-out group-hover:scale-105 sm:w-48 md:w-64 ${v.data.image_position}`}
                         transition:name={`image-${v.slug}`}
                     />
                 </div>

@@ -10,9 +10,11 @@ import "./main.css";
 interface Props {
     title: string;
     class?: string;
+    withNav?: boolean;
 }
 
-let { title, class: bodyClass } = Astro.props;
+let { title, class: bodyClass, withNav } = Astro.props;
+withNav ??= true;
 bodyClass ??= "";
 ---
 
@@ -30,12 +32,7 @@ bodyClass ??= "";
     <body
         class="relative flex min-h-screen flex-col overflow-y-scroll bg-mainlight"
     >
-        <Navbar
-            client:load
-            transition:animate="none"
-            transition:persist
-            transition:name="nav"
-        />
+        {withNav && <Navbar client:load transition:name="nav" />}
         <div
             class={`${bodyClass} text-maindark justify-center flex h-full grow`}
         >

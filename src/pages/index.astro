@@ -1,5 +1,6 @@
 ---
 import BigCard from "@/components/BigCard.astro";
+import HomeNav from "@/components/HomeNav.svelte";
 import Main from "@/components/Main.svelte";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -24,31 +25,23 @@ allBlogPosts.sort((a, b) => {
 const lastestBlogPosts = allBlogPosts[0];
 ---
 
-<Layout title="Home - pkpt">
+<Layout title="Home - pkpt" withNav={false}>
     <Main class="flex flex-col justify-center px-12">
         <article
-            class="lg:h-100vh flex h-[calc(100vh-4rem)] flex-col items-start justify-center"
+            class="lg:h-100vh flex h-screen flex-col items-center justify-center gap-8 md:flex-row"
         >
-            <h1 class="animate-wiggle-small mb-4 w-auto text-6xl font-bold">
-                Hello!
-            </h1>
-            <p class="text-md mb-8">
-                pkpt is <font class="font-bold">"Pakin Puttanukulchai"</font>
-            </p>
-
-            <h2 class="mb-4 text-xl font-bold">TLDR RESUME;</h2>
-            <ul class="text-md list-disc px-5">
-                <li>Back End Software Engineer</li>
-                <li>Go, Typescript, Python</li>
-                <li>Indie Music Lover</li>
-                <li>Audiophile</li>
-                <li>Keyboard Enthusiast</li>
-            </ul>
-            <span
-                class="absolute bottom-8 left-1/2 mx-auto animate-bounce text-2xl font-bold md:bottom-24"
-            >
-                ↓</span
-            >
+            <HomeNav transition:name="nav" load:client />
+            <div class="h-[1px] w-48 bg-secondlight md:h-24 md:w-[1px]"></div>
+            <div class="flex h-auto flex-col items-start justify-center">
+                <h2 class="mb-4 text-xl font-bold">TLDR RESUME;</h2>
+                <ul class="text-md list-disc px-5">
+                    <li>Back End Software Engineer</li>
+                    <li>Go, Typescript, Python</li>
+                    <li>Indie Music Lover</li>
+                    <li>Audiophile</li>
+                    <li>Keyboard Enthusiast</li>
+                </ul>
+            </div>
         </article>
         <article class="flex flex-col justify-center gap-8 pb-8">
             <h1 class="text-5xl font-bold">Latest Blog</h1>
