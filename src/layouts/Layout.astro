@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/rubik";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
 import "./main.css";
@@ -26,7 +27,9 @@ bodyClass ??= "";
         <ViewTransitions fallback="swap" />
         <title>{title}</title>
     </head>
-    <body class="relative flex min-h-screen flex-col overflow-y-scroll bg-mainlight">
+    <body
+        class="relative flex min-h-screen flex-col overflow-y-scroll bg-mainlight"
+    >
         <Navbar
             client:load
             transition:animate="none"

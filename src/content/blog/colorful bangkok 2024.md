@@ -35,4 +35,4 @@ date: 2024-01-21
 
 plastic plastic น่าจะเป็นวงที่เข้ากับงานแนว ๆ นี้ที่สุดแล้วแหละ ทั้งตัว personality วงเอง ตั้งตัวเพลงเอง ถือว่าคนจัดงานนี่ตาถึงมาก ๆ (และหวังว่าจะชวนมาเล่นบ่อย ๆ นะ 5555)
 
-![plastic plastic](./images/colorful-bangkok-plastic-plastic.JPG)
+![plastic plastic](./images/colorful-bangkok-plastic-plastic.jpg)

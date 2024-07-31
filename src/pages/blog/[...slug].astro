@@ -24,7 +24,8 @@ const { Content } = await post.render();
                 <Image
                     src={post.data.cover}
                     alt={post.data.title}
-                    class={`mx-auto mt-0 aspect-auto max-h-[300px] object-cover  lg:max-h-[400px] lg:min-w-[800px] lg:max-w-[calc(100%,max-content)] ${post.data.image_position}`}
+                    transition:name={`image-${post.slug}`}
+                    class={`mx-auto mt-0 aspect-auto max-h-[300px] object-cover  lg:max-h-[400px] lg:w-[800px] lg:rounded-lg ${post.data.image_position}`}
                 />
             </div>
         )
@@ -54,7 +55,7 @@ const { Content } = await post.render();
                             <div class="not-prose">
                                 <a
                                     href={`/blog/tag/${v}`}
-                                    class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-mainlight hover:text-maindark"
+                                    class="not-prose box-border rounded-full border-2 border-maindark bg-maindark px-2 py-1 text-mainlight transition-all hover:bg-secondlight hover:text-maindark"
                                 >
                                     {v}
                                 </a>

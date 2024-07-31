@@ -3,6 +3,7 @@ import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/blog.css";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/rubik";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
 import "./main.css";
@@ -29,7 +30,7 @@ const { title, og } = Astro.props;
 
         <title>{title}</title>
     </head>
-    <body class="relative flex min-h-screen flex-col items-center bg-mainlight">
+    <body class="bg-mainlight">
         <Navbar
             client:load
             transition:animate="none"
@@ -37,7 +38,9 @@ const { title, og } = Astro.props;
             transition:name="nav"
         />
 
-        <slot />
+        <div class="relative flex min-h-screen flex-col items-center">
+            <slot />
+        </div>
 
         <Footer />
 

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/resume.css";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/rubik";
 import "@fontsource/ibm-plex-sans-thai-looped";
 import { ViewTransitions } from "astro:transitions";
 import "./main.css";
@@ -32,26 +33,25 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
         <ViewTransitions fallback="swap" />
         <title>{title}</title>
     </head>
-    <body class="flex min-h-screen flex-col items-center">
+    <body class="min-h-screen bg-mainlight print:m-0">
         <Navbar
             client:load
             transition:animate="none"
             transition:persist
             transition:name="nav"
         />
-        <div class="m-8 print:m-0">
+        <div class="m-8 flex flex-col items-center">
             <article class="minimalist relative">
-                <div class="not-prose absolute right-8 top-8 print:top-0">
+                <div
+                    class="not-prose lg:w-[800px absolute right-8 top-8 print:top-0"
+                >
                     <Download />
                 </div>
                 <slot />
             </article>
         </div>
         <Footer />
-        <div
-            class="absolute -z-10 h-full w-full overflow-hidden mix-blend-multiply"
-        >
-        </div>
+
         <style>
             ::selection {
                 @apply bg-indigo-400 bg-opacity-50 text-white;
