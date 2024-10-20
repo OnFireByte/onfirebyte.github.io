@@ -17,6 +17,23 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
+<script
+    is:inline
+    src="https://giscus.app/client.js"
+    data-repo="OnFireByte/onfirebyte.github.io"
+    data-repo-id="R_kgDOKLUMbg"
+    data-category="General"
+    data-category-id="DIC_kwDOKLUMbs4CjiFV"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="noborder_light"
+    data-lang="en"
+    crossorigin="anonymous"
+    data-loading="lazy"
+    async></script>
 <Blog title={post.data.title} tags={post.data.tags} og={post.data.cover?.src}>
     {
         post.data.cover && (
@@ -69,6 +86,7 @@ const { Content } = await post.render();
             <br />
             <script
                 is:inline
+                data-cfasync="false"
                 src="https://giscus.app/client.js"
                 data-repo="OnFireByte/onfirebyte.github.io"
                 data-repo-id="R_kgDOKLUMbg"
