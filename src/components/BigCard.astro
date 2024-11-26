@@ -12,6 +12,7 @@ const { blog, class: className } = Astro.props;
 
 <a
     href={`/blog/${blog.slug}`}
+    data-astro-prefetch
     class:list={[
         "contents-fit group relative rounded-lg backdrop-blur-lg",
         className,

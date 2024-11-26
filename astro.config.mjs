@@ -9,6 +9,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
     integrations: [svelte(), tailwind()],
+    prefetch: true,
     markdown: {
         shikiConfig: {
             // Choose from Shiki's built-in themes (or add your own)

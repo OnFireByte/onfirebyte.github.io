@@ -5,6 +5,7 @@
 
 <a
     {href}
+    data-astro-prefetch
     class={`group/button
     flex h-full cursor-pointer
     items-center bg-mainlight bg-transparent text-maindark
