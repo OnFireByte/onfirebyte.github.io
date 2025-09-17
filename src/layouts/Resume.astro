@@ -1,5 +1,4 @@
 ---
-import Download from "@/components/Download.astro";
 import Footer from "@/components/Footer.svelte";
 import Navbar from "@/components/Navbar.svelte";
 import "@/layouts/resume.css";
@@ -37,11 +36,6 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
         <Navbar client:load />
         <div class="m-8 flex flex-col items-center">
             <article class="minimalist w-[800px]">
-                <div
-                    class="fixed bottom-8 right-8 z-0 rounded-full border-[0.20rem] border-stone-400 bg-[#d5d5d4] p-2 text-stone-100 transition-all ease-in-out hover:animate-wiggle"
-                >
-                    <Download />
-                </div>
                 <slot />
             </article>
         </div>
