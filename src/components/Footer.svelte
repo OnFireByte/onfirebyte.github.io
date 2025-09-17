@@ -24,3 +24,4 @@
         </p>
     </div>
 </div>
+<div class="block h-16 sm:hidden print:h-0"></div>
