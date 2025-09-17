@@ -26,18 +26,14 @@ const { title, og } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={title} />
         <meta name="author" content="Pakin Puttanukulchai" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {og && <meta property="og:image" content={og} />}
         <ViewTransitions fallback="swap" />
 
         <title>{title}</title>
     </head>
     <body class="bg-mainlight">
-        <Navbar
-            client:load
-            transition:animate="none"
-            transition:persist
-            transition:name="nav"
-        />
+        <Navbar client:load transition:animate="none" transition:persist transition:name="nav" />
 
         <div class="relative flex min-h-screen flex-col items-center">
             <slot />

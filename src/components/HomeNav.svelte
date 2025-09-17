@@ -1,14 +1,16 @@
 <script lang="ts">
-    import NavButton from "@/components/NavButton.svelte";
+    import HomeNavButton from "@/components/HomeNavButton.svelte";
     import Briefcase from "@/icons/Briefcase.svelte";
+    import Human from "@/icons/Human.svelte";
     import Pen from "@/icons/Pen.svelte";
 </script>
 
 <nav
     class={`mx-4 flex h-auto w-auto
-     flex-col items-start gap-6
+     flex-col items-center gap-6
      bg-mainlight bg-transparent px-4 transition-all duration-500
      ease-in-out
+     md:items-start
      print:hidden
      `}
 >
@@ -29,10 +31,14 @@
         pkpt.dev_
     </a>
     <div
-        class="flex h-full flex-col gap-2 rounded-lg
-        p-2 px-4 [view-transition-name:nav-menu]"
+        class="flex h-full flex-wrap gap-2 rounded-lg
+        p-2 px-4 [view-transition-name:nav-menu] md:flex-col"
     >
-        <NavButton href="/resume" isFixedWidth={true}>
+        <HomeNavButton href="/blog" isFixedWidth={true}>
+            <Pen class="block h-8 group-hover/button:animate-wiggle" />
+            Blog
+        </HomeNavButton>
+        <HomeNavButton href="/resume.pdf" isFixedWidth={true}>
             <Briefcase
                 class="
                 block h-8
@@ -40,10 +46,17 @@
                 group-hover/button:animate-wiggle"
             />
             Resume
-        </NavButton>
-        <NavButton href="/blog" isFixedWidth={true}>
-            <Pen class="block h-8 group-hover/button:animate-wiggle" />
-            Blog
-        </NavButton>
+        </HomeNavButton>
+        <HomeNavButton href="/me" isFixedWidth={true}>
+            <span>
+                <Human
+                    class="
+            h-8
+            transition-all
+            group-hover/button:animate-wiggle"
+                />
+            </span>
+            Me
+        </HomeNavButton>
     </div>
 </nav>

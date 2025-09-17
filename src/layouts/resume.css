@@ -1,19 +1,21 @@
 article.minimalist {
     @apply prose prose-stone m-0
-    max-w-fit bg-white px-12 py-8 pt-20 shadow-lg dark:prose-invert prose-h1:text-3xl prose-h1:uppercase prose-h2:mb-0 prose-h2:mt-10 prose-h2:text-sm prose-h2:uppercase
-    prose-h2:text-stone-600 prose-h3:mb-1
+    max-w-fit  dark:prose-invert lg:prose-h1:text-8xl md:prose-h1:text-6xl prose-h1:text-4xl prose-h1:uppercase prose-h2:mb-0 prose-h2:mt-10 prose-h2:uppercase
+    prose-h1:text-maindark
+    prose-strong:text-stone-700
+    prose-a:text-stone-700
+    prose-h2:text-maindark prose-h2:text-3xl prose-h2:font-extrabold
+    prose-h3:mb-1 prose-h3:text-maindark
+    prose-headings:text-stone-600
     prose-h3:mt-2 prose-h3:text-xl prose-h3:uppercase prose-h4:mb-2 prose-h4:mt-1
-    prose-h4:text-sm prose-h4:text-stone-600 prose-p:my-2 prose-p:text-sm
+     prose-h4:text-stone-600 prose-p:my-2 
     prose-p:leading-6 prose-a:font-bold prose-a:no-underline prose-a:transition-colors hover:prose-a:text-stone-400
-    prose-li:text-sm prose-table:mt-4 prose-thead:border-0
+     prose-table:mt-4 prose-thead:border-0
     prose-th:p-0 prose-th:font-medium prose-td:p-0
     prose-td:text-stone-500
     prose-hr:my-12
     dark:bg-stone-800
-    prose-h4:dark:text-stone-400 sm:px-24
-    sm:py-14 xl:max-w-[800px] print:mx-4
-    print:mt-12
-    print:max-w-4xl
-    print:pt-0
-    print:shadow-none;
+    prose-h4:dark:text-stone-400 
 }
+
+  

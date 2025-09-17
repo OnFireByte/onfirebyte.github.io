@@ -6,7 +6,7 @@ import "@/layouts/resume.css";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource-variable/rubik";
 import "@fontsource/ibm-plex-sans-thai-looped";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "./main.css";
 
 type Props = {
@@ -25,20 +25,20 @@ const { title, pdfLink, noIndex, description } = Astro.props.frontmatter;
 <html lang="en" class="relative">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={description || title} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {noIndex && <meta name="robots" content="noindex" />}
-        <ViewTransitions fallback="swap" />
+        <ClientRouter fallback="swap" />
         <title>{title}</title>
     </head>
     <body class="min-h-screen bg-mainlight print:m-0">
         <Navbar client:load />
         <div class="m-8 flex flex-col items-center">
-            <article class="minimalist relative">
+            <article class="minimalist w-[800px]">
                 <div
-                    class="not-prose lg:w-[800px absolute right-8 top-8 print:top-0"
+                    class="fixed bottom-8 right-8 z-0 rounded-full border-[0.20rem] border-stone-400 bg-[#d5d5d4] p-2 text-stone-100 transition-all ease-in-out hover:animate-wiggle"
                 >
                     <Download />
                 </div>

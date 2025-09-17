@@ -31,19 +31,17 @@ desc ??= "A personal website of Pakin Puttanukulchai (Bright).";
             rel="icon"
             type="image/x-icon"
             href="/favicon.ico"
-        /><meta name="generator" content={Astro.generator} /></head
-    >
+        />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
 
     <ViewTransitions fallback="swap" />
     <title>{title}</title>
 
-    <body
-        class="relative flex min-h-screen flex-col overflow-y-scroll bg-mainlight"
-    >
+    <body class="relative flex min-h-screen flex-col overflow-y-scroll bg-mainlight">
         {withNav && <Navbar client:load transition:name="nav" />}
-        <div
-            class={`${bodyClass} text-maindark justify-center flex h-full grow`}
-        >
+        <div class={`${bodyClass} text-maindark justify-center flex h-full grow`}>
             <slot />
         </div>
         <Footer />

@@ -17,12 +17,7 @@
     ${$$props.class}
     flex
     grow
-    flex-col
-    items-center
     justify-center
-    text-sm
-    sm:h-full
-    sm:flex-row
     sm:justify-start
     sm:text-lg`}
     {target}

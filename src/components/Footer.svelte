@@ -3,7 +3,7 @@
 </script>
 
 <div
-    class="flex w-full flex-col justify-around gap-8 bg-maindark p-8 text-mainlight print:hidden md:flex-row md:items-center"
+    class="z-10 flex w-full flex-col justify-around gap-8 bg-maindark p-8 text-mainlight md:flex-row md:items-center print:hidden"
 >
     <div class="flex flex-col gap-4">
         <a href="/" class="text-3xl font-bold">pkpt.dev_</a>

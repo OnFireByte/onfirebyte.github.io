@@ -9,7 +9,7 @@ pdfLink: resume.pdf
 
 **Back End Software Engineer**
 
-Bangkok, TH | bright.pakin@hotmail.com | https://pkpt.dev
+Bangkok, TH | bright.pakin@hotmail.com
 
 Guy with strong experience in Golang, Typescript, Python. Seeking an opportunity to use my skill to contribute to the success of project that impact the society in an innovative company.
 
