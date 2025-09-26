@@ -8,32 +8,35 @@ import tailwind from "@astrojs/tailwind";
 
 import cloudflare from "@astrojs/cloudflare";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [svelte(), tailwind()],
-    prefetch: true,
+  site: "https://pkpt.dev",
+  integrations: [svelte(), tailwind(), sitemap()],
+  prefetch: true,
 
-    markdown: {
-        shikiConfig: {
-            // Choose from Shiki's built-in themes (or add your own)
-            // https://github.com/shikijs/shiki/blob/main/docs/themes.md
-            theme: remedyLight,
-            // Add custom languages
-            // Note: Shiki has countless langs built-in, including .astro!
-            // https://github.com/shikijs/shiki/blob/main/docs/languages.md
-            langs: [],
-            // Enable word wrap to prevent horizontal scrolling
-            wrap: true,
-        },
-        rehypePlugins: [
-            [
-                rehypeExternalLinks,
-                {
-                    target: "_blank",
-                },
-            ],
-        ],
+  markdown: {
+    shikiConfig: {
+      // Choose from Shiki's built-in themes (or add your own)
+      // https://github.com/shikijs/shiki/blob/main/docs/themes.md
+      theme: remedyLight,
+      // Add custom languages
+      // Note: Shiki has countless langs built-in, including .astro!
+      // https://github.com/shikijs/shiki/blob/main/docs/languages.md
+      langs: [],
+      // Enable word wrap to prevent horizontal scrolling
+      wrap: true,
     },
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: "_blank",
+        },
+      ],
+    ],
+  },
 
-    adapter: cloudflare(),
+  adapter: cloudflare(),
 });
