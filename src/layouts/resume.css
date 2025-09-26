@@ -7,7 +7,7 @@ article.minimalist {
     prose-h2:text-maindark prose-h2:text-3xl prose-h2:font-extrabold
     prose-h3:mb-1 prose-h3:text-maindark
     prose-headings:text-stone-600
-    prose-h3:mt-2 prose-h3:text-xl prose-h3:uppercase prose-h4:mb-2 prose-h4:mt-1
+    prose-h3:mt-6 prose-h3:text-xl prose-h3:uppercase prose-h3:font-extrabold prose-h4:mb-2 prose-h4:mt-1
      prose-h4:text-stone-600 prose-p:my-2 
     prose-p:leading-6 prose-a:font-bold prose-a:no-underline prose-a:transition-colors hover:prose-a:text-stone-400
      prose-table:mt-4 prose-thead:border-0
