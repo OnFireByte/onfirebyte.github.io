@@ -6,7 +6,6 @@ import remedyLight from "./shiki/remedy-light.json";
 
 import tailwind from "@astrojs/tailwind";
 
-import cloudflare from "@astrojs/cloudflare";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -38,5 +37,4 @@ export default defineConfig({
     ],
   },
 
-  adapter: cloudflare(),
 });
